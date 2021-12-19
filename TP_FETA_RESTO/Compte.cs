@@ -28,6 +28,7 @@ namespace TP_FETA_RESTO
             this.noTel = NoTel;
             this.typeCompte = TypeCompte;
         }
+     
 
         public int GetIdUser()
         {

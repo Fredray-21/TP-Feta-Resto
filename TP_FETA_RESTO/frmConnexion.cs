@@ -27,25 +27,38 @@ namespace TP_FETA_RESTO
         private void btnSeConnecter_Click(object sender, EventArgs e)
         {
 
-            Compte c = ORMmySQL.ConnexionCompte(txtBlogin.Text, txtBpassword.Text);
-            if(c != null)
+            if (String.IsNullOrWhiteSpace(txtBlogin.Text))
             {
-                ClearText();
-                ORMmySQL.User = c;
-                Acceuil frm2 = new Acceuil();
-                frm2.lblUserName.Text = c.GetNom() + " " + c.GetPrenom();
-                frm2.lblType.Text = "Type : "+ c.GetTypeCompte();
-                frm2.lblType.Visible = true;
-                if(c.GetTypeCompte() == "ADM")
-                {
-                    frm2.pnlAdmin.Visible = true;
-                }
-                frm2.ShowDialog();
+                MessageBox.Show("Veuiller rentré une Email Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (String.IsNullOrWhiteSpace(txtBpassword.Text))
+            {
+                MessageBox.Show("Veuiller rentré un Mot de passe Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                lblMessage.Text = "Adresse mail et/ou Mot de passe Invalide";
-                lblMessage.ForeColor = Color.Red;
+                Compte c = ORMmySQL.ConnexionCompte(txtBlogin.Text, txtBpassword.Text);
+                if (c == null)
+                {
+                    MessageBox.Show("Adresse mail et/ou Mot de passe Invalide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    ClearText();
+                    ORMmySQL.CurrentUser = c;
+                    Acceuil MajAcceuil = new Acceuil();
+                    MajAcceuil.lblUserName.Text = c.GetNom() + " " + c.GetPrenom();
+                    MajAcceuil.lblType.Text = "Type : " + c.GetTypeCompte();
+                    MajAcceuil.lblType.Visible = true;
+                    MajAcceuil.btnConnexion.Text = "Mon Compte";
+                    if (c.GetTypeCompte() == "ADM" || c.GetTypeCompte() == "GES")
+                    {
+                        MajAcceuil.pnlAdmin.Visible = true;
+                    }
+                    MajAcceuil.Show();
+                    ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); // cache le formulaire d'avant
+                }
+
             }
         }
     }

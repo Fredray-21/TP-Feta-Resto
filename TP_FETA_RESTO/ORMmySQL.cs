@@ -11,8 +11,8 @@ namespace TP_FETA_RESTO
 {
     public static class ORMmySQL
     {
-        public static Compte User = null; 
-        public static String TypeCompte = "USR";
+        public static Compte CurrentUser = null; 
+        public static int _counterForm = 0; // permet de renomé et supprimer les formulaire voulu
 
         // Note
         // ExecuteNonQuery() -> int  uptade/insert/delete 
@@ -46,7 +46,28 @@ namespace TP_FETA_RESTO
             }
             rdr.Close();
             return p;
+        }
 
+        public static bool UpdateCompte(String Nom, String Prenom, String AdresseMail, String NoTel)
+        {
+            Compte currentCompte = ORMmySQL.CurrentUser;
+            if (currentCompte == null)
+            {
+                return false;
+            }
+            else
+            {
+                MySqlCommand objCmd;
+                objCmd = conn.CreateCommand();
+                String reqU = $"UPDATE compte SET NOMCPTE = '{Nom}',PRENOMCPTE = '{Prenom}',ADRMAILCPTE = '{AdresseMail}',NOTELCPTE = '{NoTel}' WHERE idUser = '{currentCompte.GetIdUser().ToString()}' ";
+                objCmd.CommandText = reqU;
+                int nbMaj = objCmd.ExecuteNonQuery();
+                if (nbMaj == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

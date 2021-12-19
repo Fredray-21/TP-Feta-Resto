@@ -31,6 +31,7 @@ namespace TP_FETA_RESTO
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
             ORMmySQL.ConnexionDB();
+
         }
 
         private void Acceuil_Load(object sender, EventArgs e)
@@ -46,6 +47,14 @@ namespace TP_FETA_RESTO
             frmFormules.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmFormules);
             frmFormules.Show();
+
+            ((Acceuil)Application.OpenForms["Acceuil"]).Name = "frm"+ORMmySQL._counterForm.ToString();
+            ORMmySQL._counterForm++;
+
+            if(ORMmySQL.CurrentUser != null)
+            {
+                btnDeconnexion.Visible = true;
+            }
         }
 
         private void btnFormules_Click(object sender, EventArgs e)
@@ -86,9 +95,13 @@ namespace TP_FETA_RESTO
 
             lblTitle.Text = "Connexion";
 
-            if(ORMmySQL.User != null)
+            if(ORMmySQL.CurrentUser != null)
             {
-               // ici new form edit user
+                this.pnlFormLoader.Controls.Clear();
+                frmEditCompte frmEditCompte = new frmEditCompte() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                frmEditCompte.FormBorderStyle = FormBorderStyle.None;
+                this.pnlFormLoader.Controls.Add(frmEditCompte);
+                frmEditCompte.Show();
             }
             else
             {
@@ -101,12 +114,18 @@ namespace TP_FETA_RESTO
            
         }
   
-
         private void btnQuit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            ORMmySQL.CurrentUser = null;
+            Acceuil MajAcceuil = new Acceuil();
+            MajAcceuil.Show();
+            ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // close le formulaire d'avant
+        }
     }
 
 
