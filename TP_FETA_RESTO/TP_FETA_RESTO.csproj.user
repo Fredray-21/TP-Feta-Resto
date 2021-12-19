@@ -5,5 +5,14 @@
     <Compile Update="Acceuil.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFormules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmMesReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
