@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnConnexion = new System.Windows.Forms.Button();
             this.btnMesReservation = new System.Windows.Forms.Button();
             this.btnFormules = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnQuit = new System.Windows.Forms.Button();
@@ -42,6 +47,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.pnlAdmin.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.Controls.Add(this.pnlAdmin);
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnConnexion);
             this.panel1.Controls.Add(this.btnMesReservation);
@@ -60,10 +68,85 @@
             this.panel1.Size = new System.Drawing.Size(186, 577);
             this.panel1.TabIndex = 0;
             // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.pnlAdmin.Controls.Add(this.panel4);
+            this.pnlAdmin.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 262);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
+            this.pnlAdmin.Size = new System.Drawing.Size(186, 214);
+            this.pnlAdmin.TabIndex = 3;
+            this.pnlAdmin.Visible = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.button1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(186, 202);
+            this.panel4.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button3.Image = global::TP_FETA_RESTO.Properties.Resources.icons8_open_box_50;
+            this.button3.Location = new System.Drawing.Point(0, 84);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(186, 42);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Ajouter Articles       ";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.btnMesReservation_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button2.Image = global::TP_FETA_RESTO.Properties.Resources.icons8_meal_50;
+            this.button2.Location = new System.Drawing.Point(0, 42);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(186, 42);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Ajouter Formules     ";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btnMesReservation_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.button1.Image = global::TP_FETA_RESTO.Properties.Resources.icons8_reservation_50;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(186, 42);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Voir les Réservations";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnMesReservation_Click);
+            // 
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 193);
+            this.pnlNav.Location = new System.Drawing.Point(0, 152);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(5, 100);
             this.pnlNav.TabIndex = 2;
@@ -122,7 +205,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblType);
             this.panel2.Controls.Add(this.lblUserName);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -131,27 +214,28 @@
             this.panel2.Size = new System.Drawing.Size(186, 144);
             this.panel2.TabIndex = 0;
             // 
-            // label1
+            // lblType
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.267326F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Some user text here";
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.267326F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblType.ForeColor = System.Drawing.Color.White;
+            this.lblType.Location = new System.Drawing.Point(53, 115);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(77, 16);
+            this.lblType.TabIndex = 2;
+            this.lblType.Text = "Type : USR";
+            this.lblType.Visible = false;
             // 
             // lblUserName
             // 
-            this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.lblUserName.Location = new System.Drawing.Point(48, 98);
+            this.lblUserName.Location = new System.Drawing.Point(41, 92);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(88, 17);
+            this.lblUserName.Size = new System.Drawing.Size(100, 17);
             this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User Name";
+            this.lblUserName.Text = "Visiteur";
+            this.lblUserName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
@@ -226,6 +310,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Acceuil_Load);
             this.panel1.ResumeLayout(false);
+            this.pnlAdmin.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -241,13 +327,18 @@
         private System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnMesReservation;
         private System.Windows.Forms.Button btnFormules;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlFormLoader;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lblUserName;
+        public System.Windows.Forms.Label lblType;
+        public System.Windows.Forms.Panel pnlAdmin;
     }
 }

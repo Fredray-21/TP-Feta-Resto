@@ -20,3 +20,12 @@ C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmFormules.resources
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmMesReservation.resources
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmConnexion.resources
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\Google.Protobuf.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\MySql.Data.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\ZstdNet.dll
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.csproj.CopyComplete

@@ -25,14 +25,17 @@ namespace TP_FETA_RESTO
     int nWidthEllipse,
     int nHeightEllipse
 );
+
         public Acceuil()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            ORMmySQL.ConnexionDB();
         }
 
         private void Acceuil_Load(object sender, EventArgs e)
         {
+           
             pnlNav.Height = btnFormules.Height;
             pnlNav.Top = btnFormules.Top;
             pnlNav.Left = btnFormules.Left;
@@ -82,11 +85,20 @@ namespace TP_FETA_RESTO
             pnlNav.Left = btnConnexion.Left;
 
             lblTitle.Text = "Connexion";
-            this.pnlFormLoader.Controls.Clear();
-            frmConnexion frmConnexion = new frmConnexion() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            frmConnexion.FormBorderStyle = FormBorderStyle.None;
-            this.pnlFormLoader.Controls.Add(frmConnexion);
-            frmConnexion.Show();
+
+            if(ORMmySQL.User != null)
+            {
+               // ici new form edit user
+            }
+            else
+            {
+                this.pnlFormLoader.Controls.Clear();
+                frmConnexion frmConnexion = new frmConnexion() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+                frmConnexion.FormBorderStyle = FormBorderStyle.None;
+                this.pnlFormLoader.Controls.Add(frmConnexion);
+                frmConnexion.Show();
+            }
+           
         }
   
 
@@ -94,6 +106,7 @@ namespace TP_FETA_RESTO
         {
             Application.Exit();
         }
+
     }
 
 

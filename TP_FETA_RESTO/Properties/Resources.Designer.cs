@@ -113,6 +113,16 @@ namespace TP_FETA_RESTO.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_open_box_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-open-box-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_reservation_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-reservation-50", resourceCulture);

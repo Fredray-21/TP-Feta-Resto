@@ -32,6 +32,7 @@
             this.btnSeConnecter = new System.Windows.Forms.Button();
             this.txtBpassword = new System.Windows.Forms.TextBox();
             this.txtBlogin = new System.Windows.Forms.TextBox();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             this.btnSeConnecter.TabIndex = 1;
             this.btnSeConnecter.Text = "Se Connecter";
             this.btnSeConnecter.UseVisualStyleBackColor = true;
+            this.btnSeConnecter.Click += new System.EventHandler(this.btnSeConnecter_Click);
             // 
             // txtBpassword
             // 
@@ -72,9 +74,19 @@
             this.txtBlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtBlogin.Location = new System.Drawing.Point(70, 33);
             this.txtBlogin.Name = "txtBlogin";
-            this.txtBlogin.PlaceholderText = "Login";
+            this.txtBlogin.PlaceholderText = "Adresse mail";
             this.txtBlogin.Size = new System.Drawing.Size(240, 27);
             this.txtBlogin.TabIndex = 1;
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Font = new System.Drawing.Font("Segoe UI", 17.82178F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblMessage.ForeColor = System.Drawing.Color.White;
+            this.lblMessage.Location = new System.Drawing.Point(12, 9);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 35);
+            this.lblMessage.TabIndex = 1;
             // 
             // frmConnexion
             // 
@@ -82,6 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(773, 477);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmConnexion";
@@ -89,6 +102,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -98,5 +112,6 @@
         private System.Windows.Forms.TextBox txtBpassword;
         private System.Windows.Forms.TextBox txtBlogin;
         private System.Windows.Forms.Button btnSeConnecter;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
