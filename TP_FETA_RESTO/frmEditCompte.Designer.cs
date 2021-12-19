@@ -125,7 +125,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel1.Controls.Add(this.btnAnnulerEdit);
             this.panel1.Controls.Add(this.btnValiderEdit);
             this.panel1.Controls.Add(this.btnModifier);
@@ -137,9 +137,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtbNom);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(27, 24);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(717, 427);
+            this.panel1.Size = new System.Drawing.Size(727, 453);
             this.panel1.TabIndex = 2;
             // 
             // btnAnnulerEdit
@@ -147,7 +147,7 @@
             this.btnAnnulerEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnnulerEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnAnnulerEdit.ForeColor = System.Drawing.Color.Red;
-            this.btnAnnulerEdit.Location = new System.Drawing.Point(82, 376);
+            this.btnAnnulerEdit.Location = new System.Drawing.Point(102, 397);
             this.btnAnnulerEdit.Name = "btnAnnulerEdit";
             this.btnAnnulerEdit.Size = new System.Drawing.Size(200, 30);
             this.btnAnnulerEdit.TabIndex = 2;
@@ -161,7 +161,7 @@
             this.btnValiderEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnValiderEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnValiderEdit.ForeColor = System.Drawing.Color.Lime;
-            this.btnValiderEdit.Location = new System.Drawing.Point(288, 376);
+            this.btnValiderEdit.Location = new System.Drawing.Point(308, 397);
             this.btnValiderEdit.Name = "btnValiderEdit";
             this.btnValiderEdit.Size = new System.Drawing.Size(200, 30);
             this.btnValiderEdit.TabIndex = 2;
@@ -175,7 +175,7 @@
             this.btnModifier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModifier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnModifier.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
-            this.btnModifier.Location = new System.Drawing.Point(494, 376);
+            this.btnModifier.Location = new System.Drawing.Point(514, 397);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(200, 30);
             this.btnModifier.TabIndex = 2;
@@ -187,8 +187,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(773, 477);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ClientSize = new System.Drawing.Size(751, 477);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEditCompte";

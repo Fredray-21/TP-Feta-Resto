@@ -38,11 +38,11 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panel1.Controls.Add(this.btnSeConnecter);
             this.panel1.Controls.Add(this.txtBpassword);
             this.panel1.Controls.Add(this.txtBlogin);
-            this.panel1.Location = new System.Drawing.Point(196, 146);
+            this.panel1.Location = new System.Drawing.Point(191, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 185);
             this.panel1.TabIndex = 0;
@@ -92,8 +92,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(773, 477);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.ClientSize = new System.Drawing.Size(751, 477);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

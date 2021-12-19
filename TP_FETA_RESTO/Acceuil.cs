@@ -94,7 +94,6 @@ namespace TP_FETA_RESTO
             pnlNav.Left = btnConnexion.Left;
 
             lblTitle.Text = "Connexion";
-
             if(ORMmySQL.CurrentUser != null)
             {
                 this.pnlFormLoader.Controls.Clear();
@@ -126,6 +125,7 @@ namespace TP_FETA_RESTO
             MajAcceuil.Show();
             ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // close le formulaire d'avant
         }
+
     }
 
 
