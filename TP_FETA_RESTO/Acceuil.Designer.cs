@@ -122,7 +122,7 @@
             this.button3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(200, 42);
             this.button3.TabIndex = 1;
-            this.button3.Text = "  Ajouter Articles       ";
+            this.button3.Text = "Ajouter Articles       ";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.btnMesReservation_Click);
@@ -138,10 +138,10 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 42);
             this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.button2.Padding = new System.Windows.Forms.Padding(6, 0, 3, 0);
             this.button2.Size = new System.Drawing.Size(200, 42);
             this.button2.TabIndex = 1;
-            this.button2.Text = "  Ajouter Formules     ";
+            this.button2.Text = "Ajouter Formules     ";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.btnMesReservation_Click);
@@ -157,10 +157,10 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 6, 0);
             this.button1.Size = new System.Drawing.Size(200, 42);
             this.button1.TabIndex = 1;
-            this.button1.Text = "  Voir les Réservations";
+            this.button1.Text = "Voir les Réservations";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnMesReservation_Click);
@@ -227,7 +227,7 @@
             this.btnMesReservation.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.btnMesReservation.Size = new System.Drawing.Size(200, 42);
             this.btnMesReservation.TabIndex = 1;
-            this.btnMesReservation.Text = "  Mes Réservations";
+            this.btnMesReservation.Text = "Mes Réservations";
             this.btnMesReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMesReservation.UseVisualStyleBackColor = true;
             this.btnMesReservation.Click += new System.EventHandler(this.btnMesReservation_Click);
@@ -243,10 +243,10 @@
             this.btnFormules.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormules.Location = new System.Drawing.Point(0, 144);
             this.btnFormules.Name = "btnFormules";
-            this.btnFormules.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnFormules.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnFormules.Size = new System.Drawing.Size(200, 42);
             this.btnFormules.TabIndex = 1;
-            this.btnFormules.Text = "  Les Formules";
+            this.btnFormules.Text = "Les Formules";
             this.btnFormules.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnFormules.UseVisualStyleBackColor = true;
             this.btnFormules.Click += new System.EventHandler(this.btnFormules_Click);

@@ -51,7 +51,7 @@
             // 
             this.btnSeConnecter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeConnecter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSeConnecter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
+            this.btnSeConnecter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(23)))), ((int)(((byte)(85)))));
             this.btnSeConnecter.Location = new System.Drawing.Point(90, 127);
             this.btnSeConnecter.Name = "btnSeConnecter";
             this.btnSeConnecter.Size = new System.Drawing.Size(200, 30);
