@@ -13,7 +13,7 @@ namespace TP_FETA_RESTO
     {
         public static Compte CurrentUser = null; 
         public static int _counterForm = 0; // permet de renomé et supprimer les formulaire voulu
-        public static List<int> Panier = new List<int>();
+        public static List<Formule> Panier = new List<Formule>();
         // Note
         // ExecuteNonQuery() -> int  uptade/insert/delete 
         // ExecuteReader() -> table  Select
@@ -91,5 +91,22 @@ namespace TP_FETA_RESTO
             return TouteLesFormule;
         }
 
+        public static Formule GetFormule(int NOFORMULE)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+
+            String reqCount = $"SELECT * FROM formules WHERE NOFORMULE = {NOFORMULE}";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            Formule f = null;
+            if (rdr.Read())
+            {
+                f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"]);
+            }
+            rdr.Close();
+            return f;
+        }
     }
 }

@@ -25,7 +25,13 @@ namespace TP_FETA_RESTO
         private void btnReserveCard_Click(object sender, EventArgs e)
         {
             int idFormule = Int32.Parse(btnReserveCard.Text.Substring(btnReserveCard.Text.Length - 1, 1));
-            ORMmySQL.Panier.Add(idFormule);
+            Formule f = ORMmySQL.GetFormule(idFormule);
+            if(f != null)
+            {
+                ORMmySQL.Panier.Add(f);
+                MessageBox.Show($"La Formule N°{f.GetIdFormule()} a été ajouté au Panier", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
 
         }
     }

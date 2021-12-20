@@ -8,6 +8,9 @@
     <Compile Update="CardFormules.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CardPanier.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>

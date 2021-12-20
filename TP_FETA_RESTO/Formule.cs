@@ -32,5 +32,10 @@ namespace TP_FETA_RESTO
             return this.prixFormule;
         }
 
+
+        public override string ToString()
+        {
+            return $"N°{this.noFormule} - {this.nomFormule} - {this.prixFormule}€";
+        }
     }
 }
