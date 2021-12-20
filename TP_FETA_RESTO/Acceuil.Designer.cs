@@ -33,9 +33,10 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pnlNavGestion = new System.Windows.Forms.Panel();
+            this.btnGestionAddArticle = new System.Windows.Forms.Button();
+            this.btnGestionAddFormule = new System.Windows.Forms.Button();
+            this.btnGestionViewResa = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlNav = new System.Windows.Forms.Panel();
@@ -91,81 +92,90 @@
             this.pnlAdmin.Controls.Add(this.panel4);
             this.pnlAdmin.Controls.Add(this.panel5);
             this.pnlAdmin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnlAdmin.Location = new System.Drawing.Point(0, 316);
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 305);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.pnlAdmin.Size = new System.Drawing.Size(200, 197);
+            this.pnlAdmin.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.pnlAdmin.Size = new System.Drawing.Size(200, 201);
             this.pnlAdmin.TabIndex = 3;
             this.pnlAdmin.Visible = false;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.pnlNavGestion);
+            this.panel4.Controls.Add(this.btnGestionAddArticle);
+            this.panel4.Controls.Add(this.btnGestionAddFormule);
+            this.panel4.Controls.Add(this.btnGestionViewResa);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 52);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 135);
+            this.panel4.Size = new System.Drawing.Size(200, 149);
             this.panel4.TabIndex = 0;
             // 
-            // button3
+            // pnlNavGestion
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.LightGray;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 84);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(200, 42);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Ajouter Articles       ";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnMesReservation_Click);
+            this.pnlNavGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(23)))), ((int)(((byte)(85)))));
+            this.pnlNavGestion.Location = new System.Drawing.Point(1, 38);
+            this.pnlNavGestion.Name = "pnlNavGestion";
+            this.pnlNavGestion.Size = new System.Drawing.Size(5, 100);
+            this.pnlNavGestion.TabIndex = 2;
             // 
-            // button2
+            // btnGestionAddArticle
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.LightGray;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 42);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.button2.Size = new System.Drawing.Size(200, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ajouter Formules     ";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnMesReservation_Click);
+            this.btnGestionAddArticle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionAddArticle.FlatAppearance.BorderSize = 0;
+            this.btnGestionAddArticle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionAddArticle.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGestionAddArticle.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGestionAddArticle.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionAddArticle.Image")));
+            this.btnGestionAddArticle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionAddArticle.Location = new System.Drawing.Point(0, 84);
+            this.btnGestionAddArticle.Name = "btnGestionAddArticle";
+            this.btnGestionAddArticle.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnGestionAddArticle.Size = new System.Drawing.Size(200, 42);
+            this.btnGestionAddArticle.TabIndex = 1;
+            this.btnGestionAddArticle.Text = "Créer Articles       ";
+            this.btnGestionAddArticle.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGestionAddArticle.UseVisualStyleBackColor = true;
+            this.btnGestionAddArticle.Click += new System.EventHandler(this.btnGestionAddArticle_Click);
             // 
-            // button1
+            // btnGestionAddFormule
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(3, 0, 6, 0);
-            this.button1.Size = new System.Drawing.Size(200, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Voir les Réservations";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnMesReservation_Click);
+            this.btnGestionAddFormule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionAddFormule.FlatAppearance.BorderSize = 0;
+            this.btnGestionAddFormule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionAddFormule.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGestionAddFormule.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGestionAddFormule.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionAddFormule.Image")));
+            this.btnGestionAddFormule.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionAddFormule.Location = new System.Drawing.Point(0, 42);
+            this.btnGestionAddFormule.Name = "btnGestionAddFormule";
+            this.btnGestionAddFormule.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnGestionAddFormule.Size = new System.Drawing.Size(200, 42);
+            this.btnGestionAddFormule.TabIndex = 1;
+            this.btnGestionAddFormule.Text = "Créer Formules     ";
+            this.btnGestionAddFormule.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGestionAddFormule.UseVisualStyleBackColor = true;
+            this.btnGestionAddFormule.Click += new System.EventHandler(this.btnGestionAddFormule_Click);
+            // 
+            // btnGestionViewResa
+            // 
+            this.btnGestionViewResa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionViewResa.FlatAppearance.BorderSize = 0;
+            this.btnGestionViewResa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionViewResa.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGestionViewResa.ForeColor = System.Drawing.Color.LightGray;
+            this.btnGestionViewResa.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionViewResa.Image")));
+            this.btnGestionViewResa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionViewResa.Location = new System.Drawing.Point(0, 0);
+            this.btnGestionViewResa.Name = "btnGestionViewResa";
+            this.btnGestionViewResa.Padding = new System.Windows.Forms.Padding(3, 0, 6, 0);
+            this.btnGestionViewResa.Size = new System.Drawing.Size(200, 42);
+            this.btnGestionViewResa.TabIndex = 1;
+            this.btnGestionViewResa.Text = "Voir les Réservations";
+            this.btnGestionViewResa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGestionViewResa.UseVisualStyleBackColor = true;
+            this.btnGestionViewResa.Click += new System.EventHandler(this.btnMesReservation_Click);
             // 
             // panel5
             // 
@@ -378,6 +388,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Acceuil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -406,17 +417,18 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlFormLoader;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGestionAddArticle;
+        private System.Windows.Forms.Button btnGestionAddFormule;
+        private System.Windows.Forms.Button btnGestionViewResa;
         public System.Windows.Forms.Label lblUserName;
         public System.Windows.Forms.Label lblType;
         public System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnConnexion;
         private System.Windows.Forms.Button btnDeconnexion;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button btnPanier;
+        private System.Windows.Forms.Panel pnlNavGestion;
+        private System.Windows.Forms.Panel panel6;
     }
 }

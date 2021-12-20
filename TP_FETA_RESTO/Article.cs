@@ -44,5 +44,10 @@ namespace TP_FETA_RESTO
         {
             return this.typeArticle;
         }
+
+        public override string ToString()
+        {
+            return $"{this.nomArticle}";
+        }
     }
 }

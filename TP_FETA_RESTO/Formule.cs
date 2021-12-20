@@ -11,12 +11,14 @@ namespace TP_FETA_RESTO
         private int noFormule;
         private String nomFormule;
         private float prixFormule;
+        private List<Article> ListArticles = new List<Article>();
 
         public Formule(int NoFormule,String NomFormule, float PrixFormule)
         {
             this.noFormule = NoFormule;
             this.nomFormule = NomFormule;
             this.prixFormule = PrixFormule;
+            this.ListArticles = new List<Article>();
         }
  
         public int GetIdFormule()

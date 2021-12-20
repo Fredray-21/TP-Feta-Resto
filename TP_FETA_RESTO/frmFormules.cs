@@ -26,9 +26,15 @@ namespace TP_FETA_RESTO
                 CardFormules.FormBorderStyle = FormBorderStyle.None;
                 CardFormules.lblNomFormule.Text = AllFormules[i - 1].GetNomFormule();
                 CardFormules.lblPrixFormule.Text = AllFormules[i - 1].GetPrixFormule().ToString() + "€";
-                CardFormules.btnReserveCard.Text = "Réserver N°"+AllFormules[i - 1].GetIdFormule().ToString();
-
-                
+                Compte c = ORMmySQL.CurrentUser;
+                if(c != null)
+                {
+                    CardFormules.btnReserveCard.Text = "Réserver N°" + AllFormules[i - 1].GetIdFormule().ToString();
+                }
+                else
+                {
+                    CardFormules.btnReserveCard.Visible = false;
+                }
                 this.pnlFormule.Controls.Add(CardFormules);
                 CardFormules.Show();
                 x = x + 360;

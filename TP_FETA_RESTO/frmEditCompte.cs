@@ -93,6 +93,8 @@ namespace TP_FETA_RESTO
                 }
                 MajAcceuil.Show();
                 ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // Supprime le formulaire d'avant
+                MessageBox.Show("Les modification ont bien été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
     }

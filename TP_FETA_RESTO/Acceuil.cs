@@ -40,6 +40,8 @@ namespace TP_FETA_RESTO
             pnlNav.Height = btnFormules.Height;
             pnlNav.Top = btnFormules.Top;
             pnlNav.Left = btnFormules.Left;
+            pnlNavGestion.Visible = false;
+            pnlNav.Visible = true;
 
             lblTitle.Text = "Les Formules";
             this.pnlFormLoader.Controls.Clear();
@@ -62,6 +64,8 @@ namespace TP_FETA_RESTO
             pnlNav.Height = btnFormules.Height;
             pnlNav.Top = btnFormules.Top;
             pnlNav.Left = btnFormules.Left;
+            pnlNavGestion.Visible = false;
+            pnlNav.Visible = true;
 
             lblTitle.Text = "Les Formules";
             this.pnlFormLoader.Controls.Clear();
@@ -76,6 +80,8 @@ namespace TP_FETA_RESTO
             pnlNav.Height = btnMesReservation.Height;
             pnlNav.Top = btnMesReservation.Top;
             pnlNav.Left = btnMesReservation.Left;
+            pnlNavGestion.Visible = false;
+            pnlNav.Visible = true;
 
             lblTitle.Text = "Mes Réservations";
             this.pnlFormLoader.Controls.Clear();
@@ -92,6 +98,8 @@ namespace TP_FETA_RESTO
             pnlNav.Height = btnConnexion.Height;
             pnlNav.Top = btnConnexion.Top;
             pnlNav.Left = btnConnexion.Left;
+            pnlNavGestion.Visible = false;
+            pnlNav.Visible = true;
 
             lblTitle.Text = "Connexion";
             if (ORMmySQL.CurrentUser != null)
@@ -152,6 +160,8 @@ namespace TP_FETA_RESTO
             pnlNav.Height = btnPanier.Height;
             pnlNav.Top = btnPanier.Top;
             pnlNav.Left = btnPanier.Left;
+            pnlNavGestion.Visible = false;
+            pnlNav.Visible = true;
 
             lblTitle.Text = "Mon Panier";
             this.pnlFormLoader.Controls.Clear();
@@ -160,7 +170,39 @@ namespace TP_FETA_RESTO
             this.pnlFormLoader.Controls.Add(frmPanier);
             frmPanier.Show();
         }
+
+        private void btnGestionAddFormule_Click(object sender, EventArgs e)
+        {
+            pnlNavGestion.Height = btnGestionAddFormule.Height;
+            pnlNavGestion.Top = btnGestionAddFormule.Top;
+            pnlNavGestion.Left = btnGestionAddFormule.Left;
+            pnlNavGestion.Visible = true;
+            pnlNav.Visible = false;
+
+            lblTitle.Text = "Création de Formules";
+            this.pnlFormLoader.Controls.Clear();
+            frmGestionAddFormule frmGestionAddFormule = new frmGestionAddFormule() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmGestionAddFormule.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmGestionAddFormule);
+            frmGestionAddFormule.Show();
+        }
+
+        private void btnGestionAddArticle_Click(object sender, EventArgs e)
+        {
+
+
+            pnlNavGestion.Height = btnGestionAddArticle.Height;
+            pnlNavGestion.Top = btnGestionAddArticle.Top;
+            pnlNavGestion.Left = btnGestionAddArticle.Left;
+            pnlNavGestion.Visible = true;
+            pnlNav.Visible = false;
+
+            lblTitle.Text = "Création de Formules";
+            this.pnlFormLoader.Controls.Clear();
+            frmGestionAddArticle frmGestionAddArticle = new frmGestionAddArticle() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmGestionAddArticle.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmGestionAddArticle);
+            frmGestionAddArticle.Show();
+        }
     }
-
-
 }

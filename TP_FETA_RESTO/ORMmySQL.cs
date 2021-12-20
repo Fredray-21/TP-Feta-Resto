@@ -78,7 +78,6 @@ namespace TP_FETA_RESTO
             MySqlDataReader rdr;
             List<Formule> TouteLesFormule = new List<Formule>();
 
-
             String reqCount = $"SELECT * FROM formules";
             objCmd.CommandText = reqCount;
             rdr = objCmd.ExecuteReader();
@@ -107,6 +106,37 @@ namespace TP_FETA_RESTO
             }
             rdr.Close();
             return f;
+        }
+
+        public static bool AjouterArticle(String Nom, String Description, String TypeArticle)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+
+            String reqI = $"INSERT INTO articles (NOMARTICLE,DESCARTICLE,TYPEARTICLE) VALUES(\"{Nom}\",\"{Description}\",'{TypeArticle}')";
+            objCmd.CommandText = reqI;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            return (nbMaj == 1);
+
+        }
+
+        public static List<Article> GetAllArticles()
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            List<Article> ToutLesArticles = new List<Article>();
+
+            String reqCount = $"SELECT * FROM articles";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"],"", (String)rdr["TYPEARTICLE"]);
+                ToutLesArticles.Add(a);
+            }
+            rdr.Close();
+            return ToutLesArticles;
         }
     }
 }
