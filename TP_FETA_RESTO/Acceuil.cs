@@ -36,7 +36,7 @@ namespace TP_FETA_RESTO
 
         private void Acceuil_Load(object sender, EventArgs e)
         {
-           
+
             pnlNav.Height = btnFormules.Height;
             pnlNav.Top = btnFormules.Top;
             pnlNav.Left = btnFormules.Left;
@@ -48,10 +48,10 @@ namespace TP_FETA_RESTO
             this.pnlFormLoader.Controls.Add(frmFormules);
             frmFormules.Show();
 
-            ((Acceuil)Application.OpenForms["Acceuil"]).Name = "frm"+ORMmySQL._counterForm.ToString();
+            ((Acceuil)Application.OpenForms["Acceuil"]).Name = "frm" + ORMmySQL._counterForm.ToString();
             ORMmySQL._counterForm++;
 
-            if(ORMmySQL.CurrentUser != null)
+            if (ORMmySQL.CurrentUser != null)
             {
                 btnDeconnexion.Visible = true;
             }
@@ -94,7 +94,7 @@ namespace TP_FETA_RESTO
             pnlNav.Left = btnConnexion.Left;
 
             lblTitle.Text = "Connexion";
-            if(ORMmySQL.CurrentUser != null)
+            if (ORMmySQL.CurrentUser != null)
             {
                 this.pnlFormLoader.Controls.Clear();
                 frmEditCompte frmEditCompte = new frmEditCompte() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
@@ -110,22 +110,56 @@ namespace TP_FETA_RESTO
                 this.pnlFormLoader.Controls.Add(frmConnexion);
                 frmConnexion.Show();
             }
-           
+
         }
-  
+
         private void btnQuit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            String message = "";
+            Compte c = ORMmySQL.CurrentUser;
+            if (c != null)
+            {
+                message = "Etes vous sur de vouloir Quitter et Supprimer votre panier";
+            }
+            else
+            {
+                message = "Etes vous sur de vouloir Quitter";
+
+            }
+            DialogResult dialogResult = MessageBox.Show(message, "Voulez-vous vraiment Quitter?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
         {
-            ORMmySQL.CurrentUser = null;
-            Acceuil MajAcceuil = new Acceuil();
-            MajAcceuil.Show();
-            ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // close le formulaire d'avant
+            DialogResult dialogResult = MessageBox.Show("Etes vous sur de vouloir vous Déconnecter et Supprimer votre panier", "Voulez-vous vraiment vous Déconnecter", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                ORMmySQL.CurrentUser = null;
+                ORMmySQL.Panier.Clear();
+                Acceuil MajAcceuil = new Acceuil();
+                MajAcceuil.Show();
+                ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // close le formulaire d'avant
+            }
+
         }
 
+        private void btnPanier_Click(object sender, EventArgs e)
+        {
+            pnlNav.Height = btnPanier.Height;
+            pnlNav.Top = btnPanier.Top;
+            pnlNav.Left = btnPanier.Left;
+
+            lblTitle.Text = "Mon Panier";
+            this.pnlFormLoader.Controls.Clear();
+            frmPanier frmPanier = new frmPanier() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmPanier.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmPanier);
+            frmPanier.Show();
+        }
     }
 
 

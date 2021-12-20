@@ -1,6 +1,6 @@
 ﻿namespace TP_FETA_RESTO
 {
-    partial class frmFormules
+    partial class frmPanier
     {
         /// <summary>
         /// Required designer variable.
@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlFormule = new System.Windows.Forms.Panel();
+            this.listBpanier = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // pnlFormule
+            // listBpanier
             // 
-            this.pnlFormule.AutoScroll = true;
-            this.pnlFormule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlFormule.Location = new System.Drawing.Point(0, 0);
-            this.pnlFormule.Name = "pnlFormule";
-            this.pnlFormule.Size = new System.Drawing.Size(751, 477);
-            this.pnlFormule.TabIndex = 0;
+            this.listBpanier.FormattingEnabled = true;
+            this.listBpanier.ItemHeight = 17;
+            this.listBpanier.Location = new System.Drawing.Point(184, 87);
+            this.listBpanier.Name = "listBpanier";
+            this.listBpanier.Size = new System.Drawing.Size(254, 225);
+            this.listBpanier.TabIndex = 0;
             // 
-            // frmFormules
+            // frmPanier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(751, 477);
-            this.Controls.Add(this.pnlFormule);
+            this.Controls.Add(this.listBpanier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmFormules";
-            this.Text = "frmDashboard";
+            this.Name = "frmPanier";
+            this.Text = "frmPanier";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlFormule;
+        private System.Windows.Forms.ListBox listBpanier;
     }
 }

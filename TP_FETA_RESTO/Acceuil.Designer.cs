@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnConnexion = new System.Windows.Forms.Button();
+            this.btnPanier = new System.Windows.Forms.Button();
             this.btnMesReservation = new System.Windows.Forms.Button();
             this.btnFormules = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -65,6 +66,7 @@
             this.panel1.Controls.Add(this.pnlAdmin);
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnConnexion);
+            this.panel1.Controls.Add(this.btnPanier);
             this.panel1.Controls.Add(this.btnMesReservation);
             this.panel1.Controls.Add(this.btnFormules);
             this.panel1.Controls.Add(this.panel2);
@@ -89,7 +91,7 @@
             this.pnlAdmin.Controls.Add(this.panel4);
             this.pnlAdmin.Controls.Add(this.panel5);
             this.pnlAdmin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnlAdmin.Location = new System.Drawing.Point(0, 262);
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 316);
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
             this.pnlAdmin.Size = new System.Drawing.Size(200, 197);
@@ -212,6 +214,26 @@
             this.btnConnexion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnConnexion.UseVisualStyleBackColor = true;
             this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
+            // 
+            // btnPanier
+            // 
+            this.btnPanier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPanier.FlatAppearance.BorderSize = 0;
+            this.btnPanier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPanier.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPanier.ForeColor = System.Drawing.Color.LightGray;
+            this.btnPanier.Image = global::TP_FETA_RESTO.Properties.Resources.icons8_shopping_cart_64;
+            this.btnPanier.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPanier.Location = new System.Drawing.Point(0, 228);
+            this.btnPanier.Name = "btnPanier";
+            this.btnPanier.Padding = new System.Windows.Forms.Padding(45, 0, 0, 0);
+            this.btnPanier.Size = new System.Drawing.Size(200, 42);
+            this.btnPanier.TabIndex = 1;
+            this.btnPanier.Text = "Mon Panier";
+            this.btnPanier.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnPanier.UseVisualStyleBackColor = true;
+            this.btnPanier.Visible = false;
+            this.btnPanier.Click += new System.EventHandler(this.btnPanier_Click);
             // 
             // btnMesReservation
             // 
@@ -395,5 +417,6 @@
         private System.Windows.Forms.Button btnDeconnexion;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.Button btnPanier;
     }
 }

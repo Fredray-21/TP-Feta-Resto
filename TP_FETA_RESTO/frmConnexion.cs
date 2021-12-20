@@ -55,6 +55,10 @@ namespace TP_FETA_RESTO
                     {
                         MajAcceuil.pnlAdmin.Visible = true;
                     }
+                    if(c != null)
+                    {
+                        MajAcceuil.btnPanier.Visible = true;
+                    }
                     MajAcceuil.Show();
                     ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); // cache le formulaire d'avant
                 }

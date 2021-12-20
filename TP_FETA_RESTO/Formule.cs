@@ -10,15 +10,15 @@ namespace TP_FETA_RESTO
     {
         private int noFormule;
         private String nomFormule;
-        private double prixFormule;
+        private float prixFormule;
 
-        public Formule(int NoFormule,String NomFormule,double PrixFormule)
+        public Formule(int NoFormule,String NomFormule, float PrixFormule)
         {
             this.noFormule = NoFormule;
             this.nomFormule = NomFormule;
             this.prixFormule = PrixFormule;
         }
-
+ 
         public int GetIdFormule()
         {
             return this.noFormule;
