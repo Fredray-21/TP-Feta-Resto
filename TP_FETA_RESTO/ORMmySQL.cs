@@ -11,7 +11,7 @@ namespace TP_FETA_RESTO
 {
     public static class ORMmySQL
     {
-        public static Compte CurrentUser = null; 
+        public static Compte CurrentUser = null;
         public static int _counterForm = 0; // permet de renomé et supprimer les formulaire voulu
         public static List<Formule> Panier = new List<Formule>();
         // Note
@@ -41,7 +41,7 @@ namespace TP_FETA_RESTO
             Compte p = null;
             if (rdr.Read())
             {
-                p = new Compte((int)rdr["idUser"], (String)rdr["MDP"], (String)rdr["NOMCPTE"], (String)rdr["PRENOMCPTE"], (DateTime)rdr["DATEINSCRIP"], (String)rdr["ADRMAILCPTE"],(String)rdr["NOTELCPTE"],(String)rdr["TYPECOMPTE"]);
+                p = new Compte((int)rdr["idUser"], (String)rdr["MDP"], (String)rdr["NOMCPTE"], (String)rdr["PRENOMCPTE"], (DateTime)rdr["DATEINSCRIP"], (String)rdr["ADRMAILCPTE"], (String)rdr["NOTELCPTE"], (String)rdr["TYPECOMPTE"]);
 
             }
             rdr.Close();
@@ -132,11 +132,54 @@ namespace TP_FETA_RESTO
             rdr = objCmd.ExecuteReader();
             while (rdr.Read())
             {
-                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"],"", (String)rdr["TYPEARTICLE"]);
+                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"], "", (String)rdr["TYPEARTICLE"]);
                 ToutLesArticles.Add(a);
             }
             rdr.Close();
             return ToutLesArticles;
+        }
+
+
+        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            float NOFORMULE = -1;
+
+            String reqI = $"INSERT INTO formules (NOMFORMULE,PRIXFORMULE) VALUES('{Nom}','{Prix}')";
+            objCmd.CommandText = reqI;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            if (nbMaj == 1)
+            {
+                String reqNumId = "SELECT LAST_INSERT_ID()";
+                objCmd.CommandText = reqNumId;
+                object result = objCmd.ExecuteScalar();
+                bool convertOK = float.TryParse(result.ToString(), out float id);
+
+                if (convertOK)
+                {
+                    NOFORMULE = id;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            //fin ajoute table formule
+
+            objCmd = conn.CreateCommand();
+            String reqI2 = $"";
+            foreach (Article a in lesArticleSelected)
+            {
+                reqI2 = reqI2 + $"INSERT INTO contient (NOFORMULE,NOARTICLE) VALUES({NOFORMULE},{a.GetIdArticle()});";
+            }
+            objCmd.CommandText = reqI2;
+            objCmd.ExecuteNonQuery();
+            return true;
         }
     }
 }

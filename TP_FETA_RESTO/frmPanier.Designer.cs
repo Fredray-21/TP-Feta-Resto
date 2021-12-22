@@ -37,7 +37,7 @@
             this.pnlPanier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPanier.Location = new System.Drawing.Point(0, 0);
             this.pnlPanier.Name = "pnlPanier";
-            this.pnlPanier.Size = new System.Drawing.Size(751, 477);
+            this.pnlPanier.Size = new System.Drawing.Size(1000, 656);
             this.pnlPanier.TabIndex = 0;
             // 
             // frmPanier
@@ -45,7 +45,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(751, 477);
+            this.ClientSize = new System.Drawing.Size(1000, 656);
             this.Controls.Add(this.pnlPanier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPanier";

@@ -74,14 +74,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 577);
+            this.panel1.Size = new System.Drawing.Size(200, 800);
             this.panel1.TabIndex = 0;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 530);
+            this.panel6.Location = new System.Drawing.Point(0, 753);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(200, 5);
             this.panel6.TabIndex = 4;
@@ -115,7 +115,7 @@
             // pnlNavGestion
             // 
             this.pnlNavGestion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(23)))), ((int)(((byte)(85)))));
-            this.pnlNavGestion.Location = new System.Drawing.Point(1, 38);
+            this.pnlNavGestion.Location = new System.Drawing.Point(-1, 38);
             this.pnlNavGestion.Name = "pnlNavGestion";
             this.pnlNavGestion.Size = new System.Drawing.Size(5, 100);
             this.pnlNavGestion.TabIndex = 2;
@@ -203,10 +203,10 @@
             // pnlNav
             // 
             this.pnlNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(23)))), ((int)(((byte)(85)))));
-            this.pnlNav.Location = new System.Drawing.Point(0, 152);
+            this.pnlNav.Location = new System.Drawing.Point(0, 193);
             this.pnlNav.Name = "pnlNav";
             this.pnlNav.Size = new System.Drawing.Size(5, 100);
-            this.pnlNav.TabIndex = 2;
+            this.pnlNav.TabIndex = 10;
             // 
             // btnConnexion
             // 
@@ -216,7 +216,7 @@
             this.btnConnexion.Font = new System.Drawing.Font("Nirmala UI", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConnexion.ForeColor = System.Drawing.Color.White;
             this.btnConnexion.Image = ((System.Drawing.Image)(resources.GetObject("btnConnexion.Image")));
-            this.btnConnexion.Location = new System.Drawing.Point(0, 535);
+            this.btnConnexion.Location = new System.Drawing.Point(0, 758);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(200, 42);
             this.btnConnexion.TabIndex = 1;
@@ -334,7 +334,7 @@
             this.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuit.Font = new System.Drawing.Font("Segoe UI", 19.9604F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQuit.ForeColor = System.Drawing.Color.White;
-            this.btnQuit.Location = new System.Drawing.Point(901, 0);
+            this.btnQuit.Location = new System.Drawing.Point(1150, 0);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(50, 50);
             this.btnQuit.TabIndex = 2;
@@ -347,7 +347,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.67327F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(23)))), ((int)(((byte)(85)))));
-            this.lblTitle.Location = new System.Drawing.Point(214, 32);
+            this.lblTitle.Location = new System.Drawing.Point(238, 50);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(213, 36);
             this.lblTitle.TabIndex = 0;
@@ -357,9 +357,9 @@
             // 
             this.pnlFormLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFormLoader.Location = new System.Drawing.Point(200, 100);
+            this.pnlFormLoader.Location = new System.Drawing.Point(200, 144);
             this.pnlFormLoader.Name = "pnlFormLoader";
-            this.pnlFormLoader.Size = new System.Drawing.Size(751, 477);
+            this.pnlFormLoader.Size = new System.Drawing.Size(1000, 656);
             this.pnlFormLoader.TabIndex = 3;
             // 
             // btnDeconnexion
@@ -367,7 +367,7 @@
             this.btnDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeconnexion.ForeColor = System.Drawing.Color.Red;
-            this.btnDeconnexion.Location = new System.Drawing.Point(695, 12);
+            this.btnDeconnexion.Location = new System.Drawing.Point(944, 12);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(200, 30);
             this.btnDeconnexion.TabIndex = 4;
@@ -381,7 +381,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(951, 577);
+            this.ClientSize = new System.Drawing.Size(1200, 800);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.pnlFormLoader);
             this.Controls.Add(this.btnQuit);
@@ -412,7 +412,6 @@
         private System.Windows.Forms.Button btnMesReservation;
         private System.Windows.Forms.Button btnFormules;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Button btnQuit;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlFormLoader;
@@ -428,7 +427,8 @@
         private System.Windows.Forms.Button btnDeconnexion;
         private System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button btnPanier;
-        private System.Windows.Forms.Panel pnlNavGestion;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnlNav;
+        private System.Windows.Forms.Panel pnlNavGestion;
     }
 }

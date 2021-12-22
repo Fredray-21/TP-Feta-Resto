@@ -29,14 +29,15 @@ namespace TP_FETA_RESTO
         private void btnDeconnexion_Click(object sender, EventArgs e)
         {
             String type = (String)listBTypeArticle.SelectedItem;
-            if (type == null)
+
+            if (String.IsNullOrWhiteSpace(txtBNomArticle.Text))
+            {
+                MessageBox.Show("Veuiller rentré un Nom Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (type == null)
             {
                 MessageBox.Show("Veuillez sélectionner un type valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            }
-            else if (String.IsNullOrWhiteSpace(txtBNomArticle.Text))
-            {
-                MessageBox.Show("Veuiller rentré un Nom Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (String.IsNullOrWhiteSpace(txtBDescArticle.Text))
             {

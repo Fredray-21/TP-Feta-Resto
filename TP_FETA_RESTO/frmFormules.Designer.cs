@@ -37,7 +37,7 @@
             this.pnlFormule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlFormule.Location = new System.Drawing.Point(0, 0);
             this.pnlFormule.Name = "pnlFormule";
-            this.pnlFormule.Size = new System.Drawing.Size(751, 477);
+            this.pnlFormule.Size = new System.Drawing.Size(1000, 656);
             this.pnlFormule.TabIndex = 0;
             // 
             // frmFormules
@@ -45,7 +45,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(751, 477);
+            this.ClientSize = new System.Drawing.Size(1000, 656);
             this.Controls.Add(this.pnlFormule);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFormules";

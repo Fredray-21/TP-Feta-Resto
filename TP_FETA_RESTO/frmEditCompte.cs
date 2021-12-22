@@ -34,8 +34,8 @@ namespace TP_FETA_RESTO
             btnModifier.Visible = false;
             btnValiderEdit.Visible = true;
             btnAnnulerEdit.Visible = true;
-            btnValiderEdit.Location = new System.Drawing.Point(514, 397);
-            btnAnnulerEdit.Location = new System.Drawing.Point(308, 397);
+            btnValiderEdit.Location = new System.Drawing.Point(598, 402); 
+            btnAnnulerEdit.Location = new System.Drawing.Point(392, 402);
 
 
             txtbNom.Enabled = true;

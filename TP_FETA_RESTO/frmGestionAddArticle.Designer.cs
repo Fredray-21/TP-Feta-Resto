@@ -41,14 +41,14 @@
             // 
             // txtBNomArticle
             // 
-            this.txtBNomArticle.Location = new System.Drawing.Point(345, 22);
+            this.txtBNomArticle.Location = new System.Drawing.Point(471, 100);
             this.txtBNomArticle.Name = "txtBNomArticle";
             this.txtBNomArticle.Size = new System.Drawing.Size(217, 25);
             this.txtBNomArticle.TabIndex = 1;
             // 
             // txtBDescArticle
             // 
-            this.txtBDescArticle.Location = new System.Drawing.Point(166, 242);
+            this.txtBDescArticle.Location = new System.Drawing.Point(292, 320);
             this.txtBDescArticle.Multiline = true;
             this.txtBDescArticle.Name = "txtBDescArticle";
             this.txtBDescArticle.Size = new System.Drawing.Size(396, 141);
@@ -59,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(166, 22);
+            this.label1.Location = new System.Drawing.Point(292, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 1;
@@ -70,7 +70,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(162, 214);
+            this.label2.Location = new System.Drawing.Point(288, 292);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 25);
             this.label2.TabIndex = 1;
@@ -81,7 +81,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(166, 73);
+            this.label3.Location = new System.Drawing.Point(292, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 25);
             this.label3.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(162, 73);
+            this.label4.Location = new System.Drawing.Point(288, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 25);
             this.label4.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(162, 73);
+            this.label5.Location = new System.Drawing.Point(288, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 25);
             this.label5.TabIndex = 1;
@@ -113,7 +113,7 @@
             // 
             this.listBTypeArticle.FormattingEnabled = true;
             this.listBTypeArticle.ItemHeight = 17;
-            this.listBTypeArticle.Location = new System.Drawing.Point(345, 73);
+            this.listBTypeArticle.Location = new System.Drawing.Point(471, 151);
             this.listBTypeArticle.Name = "listBTypeArticle";
             this.listBTypeArticle.Size = new System.Drawing.Size(217, 106);
             this.listBTypeArticle.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.btnDeconnexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeconnexion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeconnexion.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnDeconnexion.Location = new System.Drawing.Point(523, 395);
+            this.btnDeconnexion.Location = new System.Drawing.Point(524, 486);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(200, 30);
             this.btnDeconnexion.TabIndex = 0;
@@ -136,7 +136,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(735, 437);
+            this.ClientSize = new System.Drawing.Size(1000, 656);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.listBTypeArticle);
             this.Controls.Add(this.label2);
