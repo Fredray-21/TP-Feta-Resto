@@ -140,6 +140,7 @@ namespace TP_FETA_RESTO
         }
 
 
+
         public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix)
         {
             MySqlCommand objCmd;
@@ -181,5 +182,26 @@ namespace TP_FETA_RESTO
             objCmd.ExecuteNonQuery();
             return true;
         }
+
+
+        public static List<Article> GetAllArticleParIdFormule(int IdFormule)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            List<Article> LesArticleDeLaFormule = new List<Article>();
+
+            String reqCount = $"SELECT articles.*,formules.NOFORMULE FROM formules JOIN contient ON formules.NOFORMULE = contient.NOFORMULE JOIN articles ON contient.NOARTICLE = articles.NOARTICLE WHERE formules.NOFORMULE = {IdFormule}";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"], "", (String)rdr["TYPEARTICLE"]);
+                LesArticleDeLaFormule.Add(a);
+            }
+            rdr.Close();
+            return LesArticleDeLaFormule;
+        }
+
     }
 }

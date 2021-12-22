@@ -16,7 +16,7 @@ namespace TP_FETA_RESTO
         {
             InitializeComponent();
             Compte c = ORMmySQL.CurrentUser;
-            if(c != null)
+            if (c != null)
             {
                 btnReserveCard.Visible = true;
             }
@@ -24,13 +24,21 @@ namespace TP_FETA_RESTO
 
         private void btnReserveCard_Click(object sender, EventArgs e)
         {
-            string[] TabTextBTN = btnReserveCard.Text.Split('°');
-            int idFormule = Int32.Parse(TabTextBTN[1]);
-            Formule f = ORMmySQL.GetFormule(idFormule);
-            if (f != null)
+            Compte c = ORMmySQL.CurrentUser;
+            if (c == null)
             {
-                ORMmySQL.Panier.Add(f);
-                MessageBox.Show($"La Formule N°{f.GetIdFormule()} a été ajouté au Panier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Veuillez-vous connecter afin de réserver", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string[] TabTextBTN = btnReserveCard.Text.Split('°');
+                int idFormule = Int32.Parse(TabTextBTN[1]);
+                Formule f = ORMmySQL.GetFormule(idFormule);
+                if (f != null)
+                {
+                    ORMmySQL.Panier.Add(f);
+                    MessageBox.Show($"La Formule N°{f.GetIdFormule()} a été ajouté au Panier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
     }
