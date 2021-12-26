@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,7 @@ namespace TP_FETA_RESTO
             listBalcool.ClearSelected();
             txtBNomArticle.Clear();
             txtPrixFormule.Clear();
+            pictureBoxPhoto.Image = null;
         }
         private void btnAddFormule_Click(object sender, EventArgs e)
         {
@@ -107,9 +109,19 @@ namespace TP_FETA_RESTO
                 MessageBox.Show("Veuiller rentré un Prix Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+            else if (pictureBoxPhoto.Image == null)
+            {
+                MessageBox.Show("Veuiller choisir une photo Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
             else if ((entree != null && plat != null) || (plat != null && dessert != null))
             {
-                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule)) { 
+                MemoryStream ms = new MemoryStream();
+                pictureBoxPhoto.Image.Save(ms,pictureBoxPhoto.Image.RawFormat);
+                byte[] img = ms.ToArray();
+
+
+                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule, img)) { 
                     MessageBox.Show("La formule à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAll();
                 }
@@ -146,6 +158,27 @@ namespace TP_FETA_RESTO
         private void btnClearalcool_Click(object sender, EventArgs e)
         {
             listBalcool.ClearSelected();
+        }
+
+        private void btnChooseImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Image Files(*.jpg; *.png;)|*.jpg; *.png;|JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png";
+        
+            if(dlg.ShowDialog() == DialogResult.OK)
+            {
+                String PicLoc = dlg.FileName.ToString();
+                if(PicLoc.Substring(PicLoc.Length - 4) != ".png" && PicLoc.Substring(PicLoc.Length - 4) != ".jpg")
+                {
+                    MessageBox.Show("Le Format est incorrect (.png ou .jpg)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    pictureBoxPhoto.Image = Image.FromFile(PicLoc);
+                }
+
+
+            }
         }
     }
 }

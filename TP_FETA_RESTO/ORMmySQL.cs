@@ -141,14 +141,18 @@ namespace TP_FETA_RESTO
 
 
 
-        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix)
+        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix, byte[] img)
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
             float NOFORMULE = -1;
 
-            String reqI = $"INSERT INTO formules (NOMFORMULE,PRIXFORMULE) VALUES('{Nom}','{Prix}')";
+            String reqI = $"INSERT INTO formules (NOMFORMULE,PRIXFORMULE,PHOTOFORMULE) VALUES('{Nom}','{Prix}',@img)";
             objCmd.CommandText = reqI;
+
+            objCmd.Parameters.Add("@img", MySqlDbType.MediumBlob);
+            objCmd.Parameters["@img"].Value = img;
+
             int nbMaj = objCmd.ExecuteNonQuery();
             if (nbMaj == 1)
             {
@@ -203,5 +207,34 @@ namespace TP_FETA_RESTO
             return LesArticleDeLaFormule;
         }
 
+        public static byte[] GetPictureFormule(int IdFormule)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            byte[] img = null;
+
+            String reqCount = $"SELECT PHOTOFORMULE from formules WHERE NOFORMULE = {IdFormule}";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                img = (byte[])rdr["PHOTOFORMULE"];
+            }
+            rdr.Close();
+            return img;
+        }
+
+        public static bool DeleteFormule(int IdFormule)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+
+            String reqCount = $"DELETE FROM formules WHERE NOFORMULE = {IdFormule}";
+            objCmd.CommandText = reqCount;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            return (nbMaj == 1);
+        }
     }
 }

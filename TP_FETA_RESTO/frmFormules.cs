@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace TP_FETA_RESTO
 {
     public partial class frmFormules : Form
     {
+
         public frmFormules()
         {
             InitializeComponent();
@@ -28,8 +30,8 @@ namespace TP_FETA_RESTO
                 CardFormules.FormBorderStyle = FormBorderStyle.None;
                 CardFormules.lblNomFormule.Text = AllFormules[i - 1].GetNomFormule();
                 CardFormules.lblPrixFormule.Text = AllFormules[i - 1].GetPrixFormule().ToString() + "€";
-               
-                if(currentUser!= null && (currentUser.GetTypeCompte()=="GES"|| currentUser.GetTypeCompte() == "ADM"))
+
+                if (currentUser != null && (currentUser.GetTypeCompte() == "GES" || currentUser.GetTypeCompte() == "ADM"))
                 {
                     CardFormules.btnGestionDelFormule.Visible = true;
                     CardFormules.btnGestionEditFormule.Visible = true;
@@ -69,6 +71,13 @@ namespace TP_FETA_RESTO
                 }
 
                 CardFormules.btnReserveCard.Text = "Réserver N°" + AllFormules[i - 1].GetIdFormule().ToString();
+
+                //essayer d'afficher l'image
+                byte[] img = ORMmySQL.GetPictureFormule(AllFormules[i - 1].GetIdFormule());
+                var ms = new MemoryStream(img);
+                Image image = Image.FromStream(ms);
+                CardFormules.pictureBPhotoFormule.Image = image;
+
                 this.pnlFormule.Controls.Add(CardFormules);
                 CardFormules.Show();
                 x = 80;

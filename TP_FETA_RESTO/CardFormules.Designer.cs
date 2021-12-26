@@ -40,6 +40,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGestionEditFormule = new System.Windows.Forms.Button();
             this.btnGestionDelFormule = new System.Windows.Forms.Button();
+            this.pictureBPhotoFormule = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBPhotoFormule)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNomFormule
@@ -64,7 +66,7 @@
             this.lblPrixFormule.Size = new System.Drawing.Size(232, 30);
             this.lblPrixFormule.TabIndex = 1;
             this.lblPrixFormule.Text = "Prix €";
-            this.lblPrixFormule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblPrixFormule.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnReserveCard
             // 
@@ -83,9 +85,9 @@
             // 
             this.lblPlat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPlat.ForeColor = System.Drawing.Color.White;
-            this.lblPlat.Location = new System.Drawing.Point(82, 83);
+            this.lblPlat.Location = new System.Drawing.Point(12, 83);
             this.lblPlat.Name = "lblPlat";
-            this.lblPlat.Size = new System.Drawing.Size(310, 30);
+            this.lblPlat.Size = new System.Drawing.Size(237, 30);
             this.lblPlat.TabIndex = 1;
             this.lblPlat.Text = "plat";
             this.lblPlat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,9 +97,9 @@
             // 
             this.lblEntree.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblEntree.ForeColor = System.Drawing.Color.White;
-            this.lblEntree.Location = new System.Drawing.Point(82, 53);
+            this.lblEntree.Location = new System.Drawing.Point(12, 53);
             this.lblEntree.Name = "lblEntree";
-            this.lblEntree.Size = new System.Drawing.Size(310, 30);
+            this.lblEntree.Size = new System.Drawing.Size(237, 30);
             this.lblEntree.TabIndex = 1;
             this.lblEntree.Text = "entree";
             this.lblEntree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,9 +109,9 @@
             // 
             this.lblSupplement.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblSupplement.ForeColor = System.Drawing.Color.White;
-            this.lblSupplement.Location = new System.Drawing.Point(409, 53);
+            this.lblSupplement.Location = new System.Drawing.Point(255, 53);
             this.lblSupplement.Name = "lblSupplement";
-            this.lblSupplement.Size = new System.Drawing.Size(310, 30);
+            this.lblSupplement.Size = new System.Drawing.Size(241, 30);
             this.lblSupplement.TabIndex = 1;
             this.lblSupplement.Text = "supplément";
             this.lblSupplement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -119,9 +121,9 @@
             // 
             this.lblAlcool.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblAlcool.ForeColor = System.Drawing.Color.White;
-            this.lblAlcool.Location = new System.Drawing.Point(409, 113);
+            this.lblAlcool.Location = new System.Drawing.Point(255, 113);
             this.lblAlcool.Name = "lblAlcool";
-            this.lblAlcool.Size = new System.Drawing.Size(310, 30);
+            this.lblAlcool.Size = new System.Drawing.Size(241, 30);
             this.lblAlcool.TabIndex = 1;
             this.lblAlcool.Text = "alcool";
             this.lblAlcool.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,9 +133,9 @@
             // 
             this.lblBoisson.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblBoisson.ForeColor = System.Drawing.Color.White;
-            this.lblBoisson.Location = new System.Drawing.Point(409, 83);
+            this.lblBoisson.Location = new System.Drawing.Point(255, 83);
             this.lblBoisson.Name = "lblBoisson";
-            this.lblBoisson.Size = new System.Drawing.Size(310, 30);
+            this.lblBoisson.Size = new System.Drawing.Size(241, 30);
             this.lblBoisson.TabIndex = 1;
             this.lblBoisson.Text = "boisson";
             this.lblBoisson.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,9 +145,9 @@
             // 
             this.lblDessert.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblDessert.ForeColor = System.Drawing.Color.White;
-            this.lblDessert.Location = new System.Drawing.Point(82, 113);
+            this.lblDessert.Location = new System.Drawing.Point(12, 113);
             this.lblDessert.Name = "lblDessert";
-            this.lblDessert.Size = new System.Drawing.Size(310, 30);
+            this.lblDessert.Size = new System.Drawing.Size(237, 30);
             this.lblDessert.TabIndex = 1;
             this.lblDessert.Text = "Dessert";
             this.lblDessert.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,7 +156,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(398, 53);
+            this.panel1.Location = new System.Drawing.Point(502, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(5, 105);
             this.panel1.TabIndex = 6;
@@ -185,7 +187,16 @@
             this.btnGestionDelFormule.Text = "Supprimer";
             this.btnGestionDelFormule.UseVisualStyleBackColor = true;
             this.btnGestionDelFormule.Visible = false;
-            this.btnGestionDelFormule.Click += new System.EventHandler(this.btnReserveCard_Click);
+            this.btnGestionDelFormule.Click += new System.EventHandler(this.btnGestionDelFormule_Click);
+            // 
+            // pictureBPhotoFormule
+            // 
+            this.pictureBPhotoFormule.Location = new System.Drawing.Point(546, 12);
+            this.pictureBPhotoFormule.Name = "pictureBPhotoFormule";
+            this.pictureBPhotoFormule.Size = new System.Drawing.Size(225, 166);
+            this.pictureBPhotoFormule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBPhotoFormule.TabIndex = 7;
+            this.pictureBPhotoFormule.TabStop = false;
             // 
             // CardFormules
             // 
@@ -193,6 +204,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(800, 233);
+            this.Controls.Add(this.pictureBPhotoFormule);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGestionDelFormule);
             this.Controls.Add(this.btnGestionEditFormule);
@@ -207,7 +219,8 @@
             this.Controls.Add(this.lblNomFormule);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CardFormules";
-            this.Text = "CardFormules";
+            this.Text = "s";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBPhotoFormule)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,5 +239,6 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Button btnGestionEditFormule;
         public System.Windows.Forms.Button btnGestionDelFormule;
+        public System.Windows.Forms.PictureBox pictureBPhotoFormule;
     }
 }
