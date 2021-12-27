@@ -83,7 +83,7 @@ namespace TP_FETA_RESTO
             rdr = objCmd.ExecuteReader();
             while (rdr.Read())
             {
-                Formule f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"]);
+                Formule f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"], (String)rdr["DESCFORMULE"]);
                 TouteLesFormule.Add(f);
             }
             rdr.Close();
@@ -102,7 +102,7 @@ namespace TP_FETA_RESTO
             Formule f = null;
             if (rdr.Read())
             {
-                f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"]);
+                f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"], (String)rdr["DESCFORMULE"]);
             }
             rdr.Close();
             return f;
@@ -132,7 +132,7 @@ namespace TP_FETA_RESTO
             rdr = objCmd.ExecuteReader();
             while (rdr.Read())
             {
-                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"], "", (String)rdr["TYPEARTICLE"]);
+                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["TYPEARTICLE"]);
                 ToutLesArticles.Add(a);
             }
             rdr.Close();
@@ -141,13 +141,13 @@ namespace TP_FETA_RESTO
 
 
 
-        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix, byte[] img)
+        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix,String DescF, byte[] img)
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
             float NOFORMULE = -1;
 
-            String reqI = $"INSERT INTO formules (NOMFORMULE,PRIXFORMULE,PHOTOFORMULE) VALUES('{Nom}','{Prix}',@img)";
+            String reqI = $"INSERT INTO formules (NOMFORMULE,PRIXFORMULE,DESCFORMULE,PHOTOFORMULE) VALUES('{Nom}','{Prix}','{DescF}',@img)";
             objCmd.CommandText = reqI;
 
             objCmd.Parameters.Add("@img", MySqlDbType.MediumBlob);
@@ -200,7 +200,7 @@ namespace TP_FETA_RESTO
             rdr = objCmd.ExecuteReader();
             while (rdr.Read())
             {
-                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["DESCARTICLE"], "", (String)rdr["TYPEARTICLE"]);
+                Article a = new Article((int)rdr["NOARTICLE"], (String)rdr["NOMARTICLE"], (String)rdr["TYPEARTICLE"]);
                 LesArticleDeLaFormule.Add(a);
             }
             rdr.Close();

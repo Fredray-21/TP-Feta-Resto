@@ -11,13 +11,17 @@ namespace TP_FETA_RESTO
         private int noFormule;
         private String nomFormule;
         private float prixFormule;
+        private String desc;
+
         private List<Article> ListArticles = new List<Article>();
 
-        public Formule(int NoFormule,String NomFormule, float PrixFormule)
+        public Formule(int NoFormule,String NomFormule, float PrixFormule,String Description)
         {
             this.noFormule = NoFormule;
             this.nomFormule = NomFormule;
             this.prixFormule = PrixFormule;
+            this.desc = Description;
+
             this.ListArticles = new List<Article>();
         }
  
@@ -32,6 +36,10 @@ namespace TP_FETA_RESTO
         public double GetPrixFormule()
         {
             return this.prixFormule;
+        }
+        public String GetDescFormule()
+        {
+            return this.desc;
         }
 
 

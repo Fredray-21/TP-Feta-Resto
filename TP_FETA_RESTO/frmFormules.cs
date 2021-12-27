@@ -19,8 +19,8 @@ namespace TP_FETA_RESTO
             InitializeComponent();
 
             this.pnlFormule.Controls.Clear();
-            int x = 80;
-            int y = 33;
+            int x = 10;
+            int y = 10;
             List<Formule> AllFormules = ORMmySQL.GetAllFormules();
             Compte currentUser = ORMmySQL.CurrentUser;
             for (int i = 1; i <= AllFormules.Count; i++)
@@ -77,14 +77,25 @@ namespace TP_FETA_RESTO
                 var ms = new MemoryStream(img);
                 Image image = Image.FromStream(ms);
                 CardFormules.pictureBPhotoFormule.Image = image;
+                CardFormules.lblDescription.Text = AllFormules[i - 1].GetDescFormule();
 
                 this.pnlFormule.Controls.Add(CardFormules);
                 CardFormules.Show();
-                x = 80;
-                y = y + 266;
+                x = x + 485;
+                if (i % 2 == 0)
+                {
+                    x = 10;
+                    y = y + 439;
+                }
             }
 
-            CardFormules CardFin = new CardFormules() { Enabled = false, Visible = false, Location = new Point(x, y), BackColor = Color.FromArgb(50, 50, 50), Size = new Size(20, 5), TopLevel = false, TopMost = true };
+            if(AllFormules.Count % 2 != 0)
+            {
+                x = 10;
+                y = y + 439;
+            }
+
+            CardFormules CardFin = new CardFormules() { Enabled = false, Visible = false, Location = new Point(x, y), BackColor = Color.FromArgb(50, 50, 50), Size = new Size(40, 5), TopLevel = false, TopMost = true };
             CardFin.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormule.Controls.Add(CardFin);
             CardFin.Show();

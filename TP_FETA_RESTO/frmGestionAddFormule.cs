@@ -109,6 +109,11 @@ namespace TP_FETA_RESTO
                 MessageBox.Show("Veuiller rentré un Prix Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
+            else if (String.IsNullOrWhiteSpace(txtBDescFormule.Text))
+            {
+                MessageBox.Show("Veuiller rentré une Description Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
             else if (pictureBoxPhoto.Image == null)
             {
                 MessageBox.Show("Veuiller choisir une photo Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -120,8 +125,7 @@ namespace TP_FETA_RESTO
                 pictureBoxPhoto.Image.Save(ms,pictureBoxPhoto.Image.RawFormat);
                 byte[] img = ms.ToArray();
 
-
-                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule, img)) { 
+                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule, txtBDescFormule.Text, img)) { 
                     MessageBox.Show("La formule à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAll();
                 }

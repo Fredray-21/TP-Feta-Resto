@@ -51,6 +51,7 @@
             this.btnClearalcool = new System.Windows.Forms.Button();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
+            this.txtBDescFormule = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -286,7 +287,7 @@
             // pictureBoxPhoto
             // 
             this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(774, 242);
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(774, 122);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(214, 164);
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -298,13 +299,23 @@
             this.btnChooseImage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChooseImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnChooseImage.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnChooseImage.Location = new System.Drawing.Point(782, 412);
+            this.btnChooseImage.Location = new System.Drawing.Point(782, 292);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(200, 30);
             this.btnChooseImage.TabIndex = 1;
             this.btnChooseImage.Text = "Choisir Image";
             this.btnChooseImage.UseVisualStyleBackColor = true;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
+            // txtBDescFormule
+            // 
+            this.txtBDescFormule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBDescFormule.Location = new System.Drawing.Point(774, 391);
+            this.txtBDescFormule.Multiline = true;
+            this.txtBDescFormule.Name = "txtBDescFormule";
+            this.txtBDescFormule.PlaceholderText = "Description";
+            this.txtBDescFormule.Size = new System.Drawing.Size(217, 136);
+            this.txtBDescFormule.TabIndex = 2;
             // 
             // frmGestionAddFormule
             // 
@@ -334,6 +345,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrixFormule);
+            this.Controls.Add(this.txtBDescFormule);
             this.Controls.Add(this.txtBNomArticle);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -369,5 +381,6 @@
         private System.Windows.Forms.Button btnClearalcool;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.TextBox txtBDescFormule;
     }
 }
