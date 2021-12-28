@@ -262,6 +262,7 @@
             this.btnMesReservation.Text = "Mes Réservations";
             this.btnMesReservation.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnMesReservation.UseVisualStyleBackColor = true;
+            this.btnMesReservation.Visible = false;
             this.btnMesReservation.Click += new System.EventHandler(this.btnMesReservation_Click);
             // 
             // btnFormules
@@ -409,7 +410,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnMesReservation;
         private System.Windows.Forms.Button btnFormules;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnQuit;
@@ -430,5 +430,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel pnlNav;
         private System.Windows.Forms.Panel pnlNavGestion;
+        public System.Windows.Forms.Button btnMesReservation;
     }
 }

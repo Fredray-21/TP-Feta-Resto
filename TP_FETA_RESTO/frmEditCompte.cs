@@ -91,6 +91,11 @@ namespace TP_FETA_RESTO
                 {
                     MajAcceuil.pnlAdmin.Visible = true;
                 }
+                if (ORMmySQL.CurrentUser != null)
+                {
+                    MajAcceuil.btnPanier.Visible = true;
+                    MajAcceuil.btnMesReservation.Visible = true;
+                }
                 MajAcceuil.Show();
                 ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // Supprime le formulaire d'avant
                 MessageBox.Show("Les modification ont bien été effectué", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);

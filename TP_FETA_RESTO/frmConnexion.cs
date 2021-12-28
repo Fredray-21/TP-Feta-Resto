@@ -53,6 +53,7 @@ namespace TP_FETA_RESTO
                     MajAcceuil.lblType.Text = "Type : " + c.GetTypeCompte();
                     MajAcceuil.lblType.Visible = true;
                     MajAcceuil.btnConnexion.Text = "Mon Compte";
+                   
                     if (c.GetTypeCompte() == "ADM" || c.GetTypeCompte() == "GES")
                     {
                         MajAcceuil.pnlAdmin.Visible = true;
@@ -60,6 +61,7 @@ namespace TP_FETA_RESTO
                     if(c != null)
                     {
                         MajAcceuil.btnPanier.Visible = true;
+                        MajAcceuil.btnMesReservation.Visible = true;
                     }
                     MajAcceuil.Show();
                     ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); // cache le formulaire d'avant

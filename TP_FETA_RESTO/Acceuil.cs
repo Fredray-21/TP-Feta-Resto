@@ -190,8 +190,6 @@ namespace TP_FETA_RESTO
 
         private void btnGestionAddArticle_Click(object sender, EventArgs e)
         {
-
-
             pnlNavGestion.Height = btnGestionAddArticle.Height;
             pnlNavGestion.Top = btnGestionAddArticle.Top;
             pnlNavGestion.Left = btnGestionAddArticle.Left;
