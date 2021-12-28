@@ -19,7 +19,7 @@ namespace TP_FETA_RESTO
             this.typeArticle = TypeArticle;
 
         }
-
+       
         public int GetIdArticle()
         {
             return this.noArticle;

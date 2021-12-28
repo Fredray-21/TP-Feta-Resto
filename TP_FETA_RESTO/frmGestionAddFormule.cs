@@ -18,33 +18,40 @@ namespace TP_FETA_RESTO
         {
             InitializeComponent();
             List<Article> LesAticles = ORMmySQL.GetAllArticles();
+            comBoxentree.Items.Add(String.Empty);
+            comBoxPlat.Items.Add(String.Empty);
+            comBoxDessert.Items.Add(String.Empty);
+            comBoxSupp.Items.Add(String.Empty);
+            comBoxBoisson.Items.Add(String.Empty);
+            comBoxAlcool.Items.Add(String.Empty);
+
             if (LesAticles != null)
             {
                 foreach (Article a in LesAticles)
                 {
                     if (a.GetTypeArticle() == "Entrée")
                     {
-                        listBentree.Items.Add(a);
+                        comBoxentree.Items.Add(a);
                     }
                     else if (a.GetTypeArticle() == "Plat")
                     {
-                        listBplat.Items.Add(a);
+                        comBoxPlat.Items.Add(a);
                     }
                     else if (a.GetTypeArticle() == "Dessert")
                     {
-                        listBdessert.Items.Add(a);
+                        comBoxDessert.Items.Add(a);
                     }
                     else if (a.GetTypeArticle() == "Supplément")
                     {
-                        listBsupplement.Items.Add(a);
+                        comBoxSupp.Items.Add(a);
                     }
                     else if (a.GetTypeArticle() == "Boisson")
                     {
-                        listBboisson.Items.Add(a);
+                        comBoxBoisson.Items.Add(a);
                     }
                     else if (a.GetTypeArticle() == "Alcool")
                     {
-                        listBalcool.Items.Add(a);
+                        comBoxAlcool.Items.Add(a);
                     }
                     else
                     {
@@ -54,24 +61,51 @@ namespace TP_FETA_RESTO
         }
         public void ClearAll()
         {
-            listBentree.ClearSelected();
-            listBplat.ClearSelected();
-            listBdessert.ClearSelected();
-            listBsupplement.ClearSelected();
-            listBboisson.ClearSelected();
-            listBalcool.ClearSelected();
+            comBoxentree.SelectedIndex = -1;
+            comBoxPlat.SelectedIndex = -1;
+            comBoxDessert.SelectedIndex = -1;
+            comBoxSupp.SelectedIndex = -1;
+            comBoxBoisson.SelectedIndex = -1;
+            comBoxAlcool.SelectedIndex = -1;
             txtBNomArticle.Clear();
             txtPrixFormule.Clear();
+            txtBDescFormule.Clear();
             pictureBoxPhoto.Image = null;
         }
         private void btnAddFormule_Click(object sender, EventArgs e)
         {
-            Article entree = (Article)listBentree.SelectedItem;
-            Article plat = (Article)listBplat.SelectedItem;
-            Article dessert = (Article)listBdessert.SelectedItem;
-            Article supplement = (Article)listBsupplement.SelectedItem;
-            Article boisson = (Article)listBboisson.SelectedItem;
-            Article alcool = (Article)listBalcool.SelectedItem;
+            Article entree = null;
+            Article plat = null;
+            Article dessert = null;
+            Article supplement = null;
+            Article boisson = null;
+            Article alcool = null;
+
+            if(comBoxentree.SelectedItem is Article)
+            {
+                entree = (Article)comBoxentree.SelectedItem;
+
+            }
+            if(comBoxPlat.SelectedItem is Article)
+            {
+                plat = (Article)comBoxPlat.SelectedItem;
+            }
+            if (comBoxDessert.SelectedItem is Article)
+            {
+                dessert = (Article)comBoxDessert.SelectedItem;
+            }
+            if (comBoxSupp.SelectedItem is Article)
+            {
+                supplement = (Article)comBoxSupp.SelectedItem;
+            }
+            if (comBoxBoisson.SelectedItem is Article)
+            {
+                boisson = (Article)comBoxBoisson.SelectedItem;
+            }
+            if (comBoxAlcool.SelectedItem is Article)
+            {
+                alcool = (Article)comBoxAlcool.SelectedItem;
+            }
 
             List<Article> LesArticleSelected = new List<Article>();
             if (entree != null)
@@ -104,7 +138,7 @@ namespace TP_FETA_RESTO
             {
                 MessageBox.Show("Veuiller rentré un Nom Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (String.IsNullOrWhiteSpace(txtPrixFormule.Text) || ConvertOK==false || PrixFormule == 0)
+            else if (String.IsNullOrWhiteSpace(txtPrixFormule.Text) || ConvertOK == false || PrixFormule == 0)
             {
                 MessageBox.Show("Veuiller rentré un Prix Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -122,10 +156,11 @@ namespace TP_FETA_RESTO
             else if ((entree != null && plat != null) || (plat != null && dessert != null))
             {
                 MemoryStream ms = new MemoryStream();
-                pictureBoxPhoto.Image.Save(ms,pictureBoxPhoto.Image.RawFormat);
+                pictureBoxPhoto.Image.Save(ms, pictureBoxPhoto.Image.RawFormat);
                 byte[] img = ms.ToArray();
 
-                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule, txtBDescFormule.Text, img)) { 
+                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomArticle.Text, PrixFormule, txtBDescFormule.Text, img))
+                {
                     MessageBox.Show("La formule à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearAll();
                 }
@@ -139,40 +174,17 @@ namespace TP_FETA_RESTO
                 MessageBox.Show("Veuiller selectionner au moin (Entrée/plat) ou (Plat/dessert)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void btnClearentree_Click(object sender, EventArgs e)
-        {
-            listBentree.ClearSelected();
-        }
-        private void btnClearplat_Click(object sender, EventArgs e)
-        {
-            listBplat.ClearSelected();
-        }
-        private void btnCleardessert_Click(object sender, EventArgs e)
-        {
-            listBdessert.ClearSelected();
-        }
-        private void btnClearsupplement_Click(object sender, EventArgs e)
-        {
-            listBsupplement.ClearSelected();
-        }
-        private void btnClearboisson_Click(object sender, EventArgs e)
-        {
-            listBboisson.ClearSelected();
-        }
-        private void btnClearalcool_Click(object sender, EventArgs e)
-        {
-            listBalcool.ClearSelected();
-        }
+
 
         private void btnChooseImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "Image Files(*.jpg; *.png;)|*.jpg; *.png;|JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png";
-        
-            if(dlg.ShowDialog() == DialogResult.OK)
+
+            if (dlg.ShowDialog() == DialogResult.OK)
             {
                 String PicLoc = dlg.FileName.ToString();
-                if(PicLoc.Substring(PicLoc.Length - 4) != ".png" && PicLoc.Substring(PicLoc.Length - 4) != ".jpg")
+                if (PicLoc.Substring(PicLoc.Length - 4) != ".png" && PicLoc.Substring(PicLoc.Length - 4) != ".jpg")
                 {
                     MessageBox.Show("Le Format est incorrect (.png ou .jpg)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }

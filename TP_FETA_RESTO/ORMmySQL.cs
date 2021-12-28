@@ -108,12 +108,12 @@ namespace TP_FETA_RESTO
             return f;
         }
 
-        public static bool AjouterArticle(String Nom, String Description, String TypeArticle)
+        public static bool AjouterArticle(String Nom, String TypeArticle)
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
 
-            String reqI = $"INSERT INTO articles (NOMARTICLE,DESCARTICLE,TYPEARTICLE) VALUES(\"{Nom}\",\"{Description}\",'{TypeArticle}')";
+            String reqI = $"INSERT INTO articles (NOMARTICLE,TYPEARTICLE) VALUES(\"{Nom}\",'{TypeArticle}')";
             objCmd.CommandText = reqI;
             int nbMaj = objCmd.ExecuteNonQuery();
             return (nbMaj == 1);
@@ -182,6 +182,7 @@ namespace TP_FETA_RESTO
             {
                 reqI2 = reqI2 + $"INSERT INTO contient (NOFORMULE,NOARTICLE) VALUES({NOFORMULE},{a.GetIdArticle()});";
             }
+            
             objCmd.CommandText = reqI2;
             objCmd.ExecuteNonQuery();
             return true;

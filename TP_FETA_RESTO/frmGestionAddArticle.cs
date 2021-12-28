@@ -23,7 +23,6 @@ namespace TP_FETA_RESTO
         {
             listBTypeArticle.SelectedItem = null;
             txtBNomArticle.Text = "";
-            txtBDescArticle.Text = "";
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
@@ -39,13 +38,9 @@ namespace TP_FETA_RESTO
                 MessageBox.Show("Veuillez sélectionner un type valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-            else if (String.IsNullOrWhiteSpace(txtBDescArticle.Text))
-            {
-                MessageBox.Show("Veuiller rentré une Description Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
             else
             {
-                ORMmySQL.AjouterArticle(txtBNomArticle.Text, txtBDescArticle.Text, type);
+                ORMmySQL.AjouterArticle(txtBNomArticle.Text, type);
                 MessageBox.Show("L'Article à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTxt();
             }
