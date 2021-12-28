@@ -19,13 +19,29 @@ namespace TP_FETA_RESTO
             this.pnlPanier.Controls.Clear();
             int x = 10;
             int y = 10;
-            List<Formule> Panier = ORMmySQL.Panier;
+            List<Formule> PanierDistinct = new List<Formule>();
+            foreach (Formule f in ORMmySQL.Panier)
+            {
+                if (PanierDistinct.Contains(f) != true)
+                {
+                    PanierDistinct.Add(f);
+                }
+            }
 
-            foreach (Formule f in Panier)
+            foreach (Formule f in PanierDistinct)
             {
                 CardPanier CardPanier = new CardPanier() { Location = new Point(x, y), TopLevel = false, TopMost = true };
                 CardPanier.FormBorderStyle = FormBorderStyle.None;
                 // ici les edit de label
+                int multiplicateur = 0;
+                foreach (Formule formule in ORMmySQL.Panier)
+                {
+                    if (formule.Equals(f))
+                    {
+                        multiplicateur++;
+                    }
+                }
+                CardPanier.lblMultiplicateur.Text = "x"+multiplicateur.ToString();
                 CardPanier.lblNOFORMULE.Text = f.GetIdFormule().ToString();
                 this.pnlPanier.Controls.Add(CardPanier);
                 CardPanier.Show();
