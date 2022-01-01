@@ -38,6 +38,7 @@
             this.lblAlcool = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
+            this.lblPrixUnitaire = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,22 +149,34 @@
             // 
             // PictureBox
             // 
-            this.PictureBox.Location = new System.Drawing.Point(504, 63);
+            this.PictureBox.Location = new System.Drawing.Point(495, 53);
             this.PictureBox.Name = "PictureBox";
             this.PictureBox.Size = new System.Drawing.Size(173, 125);
             this.PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox.TabIndex = 1;
             this.PictureBox.TabStop = false;
             // 
+            // lblPrixUnitaire
+            // 
+            this.lblPrixUnitaire.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblPrixUnitaire.ForeColor = System.Drawing.Color.White;
+            this.lblPrixUnitaire.Location = new System.Drawing.Point(470, 181);
+            this.lblPrixUnitaire.Name = "lblPrixUnitaire";
+            this.lblPrixUnitaire.Size = new System.Drawing.Size(229, 30);
+            this.lblPrixUnitaire.TabIndex = 0;
+            this.lblPrixUnitaire.Text = "1000€/u";
+            this.lblPrixUnitaire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CardPanier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(711, 200);
+            this.ClientSize = new System.Drawing.Size(711, 220);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.lblMultiplicateur);
             this.Controls.Add(this.lblSupp);
+            this.Controls.Add(this.lblPrixUnitaire);
             this.Controls.Add(this.lblAlcool);
             this.Controls.Add(this.lblDessert);
             this.Controls.Add(this.lblBoisson);
@@ -192,5 +205,6 @@
         public System.Windows.Forms.Label lblAlcool;
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.PictureBox PictureBox;
+        public System.Windows.Forms.Label lblPrixUnitaire;
     }
 }

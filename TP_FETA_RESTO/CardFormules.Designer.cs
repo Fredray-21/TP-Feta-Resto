@@ -71,14 +71,17 @@
             // 
             // btnReserveCard
             // 
+            this.btnReserveCard.AutoSize = true;
             this.btnReserveCard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReserveCard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnReserveCard.ForeColor = System.Drawing.Color.LimeGreen;
             this.btnReserveCard.Location = new System.Drawing.Point(12, 382);
+            this.btnReserveCard.MaximumSize = new System.Drawing.Size(246, 32);
+            this.btnReserveCard.MinimumSize = new System.Drawing.Size(200, 32);
             this.btnReserveCard.Name = "btnReserveCard";
-            this.btnReserveCard.Size = new System.Drawing.Size(200, 30);
+            this.btnReserveCard.Size = new System.Drawing.Size(200, 32);
             this.btnReserveCard.TabIndex = 4;
-            this.btnReserveCard.Text = "Réserver";
+            this.btnReserveCard.Text = "Ajouter au Panier N°69";
             this.btnReserveCard.UseVisualStyleBackColor = true;
             this.btnReserveCard.Click += new System.EventHandler(this.btnReserveCard_Click);
             // 
@@ -235,6 +238,7 @@
             this.Text = "s";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBPhotoFormule)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -16,6 +16,14 @@ namespace TP_FETA_RESTO
         public frmPanier()
         {
             InitializeComponent();
+            double Prix_Total = 0;
+            foreach (Formule f in ORMmySQL.Panier)
+            {
+                Prix_Total += f.GetPrixFormule();
+            }
+
+            lblPrixTotal.Text = Prix_Total.ToString()+"€";
+
 
             this.pnlPanier.Controls.Clear();
             int x = 10;
@@ -48,7 +56,8 @@ namespace TP_FETA_RESTO
 
                 CardPanier.lblNOFORMULE.Text = "N°"+f.GetIdFormule().ToString();
                 CardPanier.lblTitle.Text = f.GetNomFormule();
-                
+                CardPanier.lblPrixUnitaire.Text = f.GetPrixFormule().ToString() + "€/u";
+
                 List<Article> SesArticles = ORMmySQL.GetAllArticleParIdFormule(f.GetIdFormule());
                 foreach (Article a in SesArticles)
                 {
@@ -92,7 +101,7 @@ namespace TP_FETA_RESTO
                 this.pnlPanier.Controls.Add(CardPanier);
                 CardPanier.Show();
                 x = 10;
-                y = y + 210;
+                y = y + 230;
             }
             CardPanier CardFin = new CardPanier() { Enabled = false, Visible = false, Location = new Point(x, y), BackColor = Color.FromArgb(50, 50, 50), Size = new Size(20, 5), TopLevel = false, TopMost = true };
             CardFin.FormBorderStyle = FormBorderStyle.None;

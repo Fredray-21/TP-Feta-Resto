@@ -70,7 +70,7 @@ namespace TP_FETA_RESTO
                     }
                 }
 
-                CardFormules.btnReserveCard.Text = "Réserver N°" + AllFormules[i - 1].GetIdFormule().ToString();
+                CardFormules.btnReserveCard.Text = "Ajouter au Panier N°" + AllFormules[i - 1].GetIdFormule().ToString();
 
                 //essayer d'afficher l'image
                 byte[] img = ORMmySQL.GetPictureFormule(AllFormules[i - 1].GetIdFormule());
