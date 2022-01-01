@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace TP_FETA_RESTO
             this.pnlPanier.Controls.Clear();
             int x = 10;
             int y = 10;
-            List<Formule> PanierDistinct = new List<Formule>();
+            List<Formule> PanierDistinct = new List<Formule>(); // ici panier Distinct
             foreach (Formule f in ORMmySQL.Panier)
             {
                 if (PanierDistinct.Contains(f) != true)
@@ -32,7 +33,8 @@ namespace TP_FETA_RESTO
             {
                 CardPanier CardPanier = new CardPanier() { Location = new Point(x, y), TopLevel = false, TopMost = true };
                 CardPanier.FormBorderStyle = FormBorderStyle.None;
-                // ici les edit de label
+                
+                //Début multiplicateur
                 int multiplicateur = 0;
                 foreach (Formule formule in ORMmySQL.Panier)
                 {
@@ -42,7 +44,51 @@ namespace TP_FETA_RESTO
                     }
                 }
                 CardPanier.lblMultiplicateur.Text = "x"+multiplicateur.ToString();
-                CardPanier.lblNOFORMULE.Text = f.GetIdFormule().ToString();
+                //Fin multiplicateur
+
+                CardPanier.lblNOFORMULE.Text = "N°"+f.GetIdFormule().ToString();
+                CardPanier.lblTitle.Text = f.GetNomFormule();
+                
+                List<Article> SesArticles = ORMmySQL.GetAllArticleParIdFormule(f.GetIdFormule());
+                foreach (Article a in SesArticles)
+                {
+                    if (a.GetTypeArticle() == "Entrée")
+                    {
+                        CardPanier.lblEntree.Text = a.GetNomArticle();
+                        CardPanier.lblEntree.Visible = true;
+                    }
+                    if (a.GetTypeArticle() == "Plat")
+                    {
+                        CardPanier.lblPlat.Text = a.GetNomArticle();
+                        CardPanier.lblPlat.Visible = true;
+                    }
+                    if (a.GetTypeArticle() == "Dessert")
+                    {
+                        CardPanier.lblDessert.Text = a.GetNomArticle();
+                        CardPanier.lblDessert.Visible = true;
+                    }
+                    if (a.GetTypeArticle() == "Supplément")
+                    {
+                        CardPanier.lblSupp.Text = a.GetNomArticle();
+                        CardPanier.lblSupp.Visible = true;
+                    }
+                    if (a.GetTypeArticle() == "Boisson")
+                    {
+                        CardPanier.lblBoisson.Text = a.GetNomArticle();
+                        CardPanier.lblBoisson.Visible = true;
+                    }
+                    if (a.GetTypeArticle() == "Alcool")
+                    {
+                        CardPanier.lblAlcool.Text = a.GetNomArticle();
+                        CardPanier.lblAlcool.Visible = true;
+                    }
+                }
+                byte[] img = ORMmySQL.GetPictureFormule(f.GetIdFormule());
+                var ms = new MemoryStream(img);
+                Image image = Image.FromStream(ms);
+                CardPanier.PictureBox.Image = image;
+
+
                 this.pnlPanier.Controls.Add(CardPanier);
                 CardPanier.Show();
                 x = 10;
