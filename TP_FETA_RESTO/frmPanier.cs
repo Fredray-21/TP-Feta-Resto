@@ -16,16 +16,18 @@ namespace TP_FETA_RESTO
         public frmPanier()
         {
             InitializeComponent();
+            if(ORMmySQL.Panier.Count > 0)
+            {
+                pnlPrixTotal.Visible = true;
+                this.pnlPanier.Controls.Clear();
+            }
+
             double Prix_Total = 0;
             foreach (Formule f in ORMmySQL.Panier)
             {
                 Prix_Total += f.GetPrixFormule();
             }
-
             lblPrixTotal.Text = Prix_Total.ToString()+"€";
-
-
-            this.pnlPanier.Controls.Clear();
             int x = 10;
             int y = 10;
             List<Formule> PanierDistinct = new List<Formule>(); // ici panier Distinct
@@ -56,7 +58,7 @@ namespace TP_FETA_RESTO
 
                 CardPanier.lblNOFORMULE.Text = "N°"+f.GetIdFormule().ToString();
                 CardPanier.lblTitle.Text = f.GetNomFormule();
-                CardPanier.lblPrixUnitaire.Text = f.GetPrixFormule().ToString() + "€/u";
+                CardPanier.lblPrixUnitaire.Text = f.GetPrixFormule().ToString() + " €/u";
 
                 List<Article> SesArticles = ORMmySQL.GetAllArticleParIdFormule(f.GetIdFormule());
                 foreach (Article a in SesArticles)
