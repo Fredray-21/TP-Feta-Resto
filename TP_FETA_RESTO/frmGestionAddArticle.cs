@@ -17,12 +17,15 @@ namespace TP_FETA_RESTO
             InitializeComponent();
             String[] TypeArticle = new String[] { "Entrée", "Plat", "Dessert", "Supplément", "Boisson", "Alcool" };
             listBTypeArticle.Items.AddRange(TypeArticle.ToArray());
+
+            listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
         }
 
         public void ClearTxt()
         {
             listBTypeArticle.SelectedItem = null;
             txtBNomArticle.Text = "";
+            listBLesArticles.Items.Clear();
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
@@ -43,6 +46,26 @@ namespace TP_FETA_RESTO
                 ORMmySQL.AjouterArticle(txtBNomArticle.Text, type);
                 MessageBox.Show("L'Article à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ClearTxt();
+            }
+        }
+
+        private void btnDeleteArticle_Click(object sender, EventArgs e)
+        {
+            Article article = (Article)listBLesArticles.SelectedItem;
+
+            if (article == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un article valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (ORMmySQL.DeleteArticle(article.GetIdArticle()))
+                {
+                    MessageBox.Show("L'Article à bien été supprimer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearTxt();
+                    listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
+                }
+
             }
         }
     }

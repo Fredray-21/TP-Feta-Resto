@@ -237,5 +237,16 @@ namespace TP_FETA_RESTO
             int nbMaj = objCmd.ExecuteNonQuery();
             return (nbMaj == 1);
         }
+        public static bool DeleteArticle(int IdArticle)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+
+            String reqCount = $"DELETE FROM articles WHERE NOARTICLE = {IdArticle}";
+            objCmd.CommandText = reqCount;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            return (nbMaj == 1);
+        }
     }
 }
