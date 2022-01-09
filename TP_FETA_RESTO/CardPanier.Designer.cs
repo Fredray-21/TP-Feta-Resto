@@ -39,27 +39,28 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.lblPrixUnitaire = new System.Windows.Forms.Label();
+            this.btnRemove1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNOFORMULE
             // 
-            this.lblNOFORMULE.AutoSize = true;
             this.lblNOFORMULE.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.68317F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNOFORMULE.ForeColor = System.Drawing.Color.White;
-            this.lblNOFORMULE.Location = new System.Drawing.Point(12, 12);
+            this.lblNOFORMULE.Location = new System.Drawing.Point(9, 9);
             this.lblNOFORMULE.Name = "lblNOFORMULE";
-            this.lblNOFORMULE.Size = new System.Drawing.Size(38, 29);
+            this.lblNOFORMULE.Size = new System.Drawing.Size(107, 42);
             this.lblNOFORMULE.TabIndex = 0;
             this.lblNOFORMULE.Text = "ID";
+            this.lblNOFORMULE.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblMultiplicateur
             // 
             this.lblMultiplicateur.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.23762F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblMultiplicateur.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblMultiplicateur.Location = new System.Drawing.Point(566, 1);
+            this.lblMultiplicateur.Location = new System.Drawing.Point(594, 1);
             this.lblMultiplicateur.Name = "lblMultiplicateur";
-            this.lblMultiplicateur.Size = new System.Drawing.Size(140, 64);
+            this.lblMultiplicateur.Size = new System.Drawing.Size(112, 40);
             this.lblMultiplicateur.TabIndex = 0;
             this.lblMultiplicateur.Text = "x 2";
             this.lblMultiplicateur.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -140,9 +141,9 @@
             // 
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.68317F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(110, 1);
+            this.lblTitle.Location = new System.Drawing.Point(125, 1);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(450, 62);
+            this.lblTitle.Size = new System.Drawing.Size(364, 62);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ID";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -167,12 +168,26 @@
             this.lblPrixUnitaire.Text = "1000€/u";
             this.lblPrixUnitaire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnRemove1
+            // 
+            this.btnRemove1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11881F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRemove1.ForeColor = System.Drawing.Color.Red;
+            this.btnRemove1.Location = new System.Drawing.Point(495, 11);
+            this.btnRemove1.Name = "btnRemove1";
+            this.btnRemove1.Size = new System.Drawing.Size(93, 30);
+            this.btnRemove1.TabIndex = 5;
+            this.btnRemove1.Text = "Retiré 1";
+            this.btnRemove1.UseVisualStyleBackColor = true;
+            this.btnRemove1.Click += new System.EventHandler(this.btnRemove1_Click);
+            // 
             // CardPanier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(711, 220);
+            this.Controls.Add(this.btnRemove1);
             this.Controls.Add(this.PictureBox);
             this.Controls.Add(this.lblMultiplicateur);
             this.Controls.Add(this.lblSupp);
@@ -189,7 +204,6 @@
             this.Text = "CardPanier";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -206,5 +220,6 @@
         public System.Windows.Forms.Label lblTitle;
         public System.Windows.Forms.PictureBox PictureBox;
         public System.Windows.Forms.Label lblPrixUnitaire;
+        private System.Windows.Forms.Button btnRemove1;
     }
 }

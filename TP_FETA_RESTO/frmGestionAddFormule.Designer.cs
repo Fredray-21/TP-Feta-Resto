@@ -194,6 +194,7 @@
             this.comBoxentree.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comBoxentree.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.comBoxentree.FormattingEnabled = true;
+            this.comBoxentree.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.comBoxentree.Location = new System.Drawing.Point(235, 164);
             this.comBoxentree.Name = "comBoxentree";
             this.comBoxentree.Size = new System.Drawing.Size(191, 33);

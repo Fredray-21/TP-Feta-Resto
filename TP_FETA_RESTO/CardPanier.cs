@@ -16,5 +16,11 @@ namespace TP_FETA_RESTO
         {
             InitializeComponent();
         }
+
+        private void btnRemove1_Click(object sender, EventArgs e)
+        {
+            int IdFormule = Convert.ToInt32(lblNOFORMULE.Text.Split("°")[1]);
+            MessageBox.Show(IdFormule.ToString());
+        }
     }
 }
