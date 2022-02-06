@@ -413,8 +413,6 @@
         private System.Windows.Forms.Button btnFormules;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnQuit;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Panel pnlFormLoader;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnGestionAddArticle;
         private System.Windows.Forms.Button btnGestionAddFormule;
@@ -428,8 +426,10 @@
         private System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Button btnPanier;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel pnlNav;
-        private System.Windows.Forms.Panel pnlNavGestion;
         public System.Windows.Forms.Button btnMesReservation;
+        public System.Windows.Forms.Panel pnlNav;
+        public System.Windows.Forms.Panel pnlNavGestion;
+        public System.Windows.Forms.Panel pnlFormLoader;
+        public System.Windows.Forms.Label lblTitle;
     }
 }

@@ -83,6 +83,7 @@
             this.btnReservePanier.TabIndex = 5;
             this.btnReservePanier.Text = "Réserver ce Panier";
             this.btnReservePanier.UseVisualStyleBackColor = true;
+            this.btnReservePanier.Click += new System.EventHandler(this.btnReservePanier_Click);
             // 
             // lblPrixTotal
             // 

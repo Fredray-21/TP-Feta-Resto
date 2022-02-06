@@ -110,5 +110,10 @@ namespace TP_FETA_RESTO
             this.pnlPanier.Controls.Add(CardFin);
             CardFin.Show();
         }
+
+        private void btnReservePanier_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

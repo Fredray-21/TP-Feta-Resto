@@ -37,7 +37,6 @@ namespace TP_FETA_RESTO
 
         private void Acceuil_Load(object sender, EventArgs e)
         {
-
             pnlNav.Height = btnFormules.Height;
             pnlNav.Top = btnFormules.Top;
             pnlNav.Left = btnFormules.Left;
