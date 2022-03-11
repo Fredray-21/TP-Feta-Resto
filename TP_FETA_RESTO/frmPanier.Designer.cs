@@ -35,6 +35,7 @@
             this.lblPrixTotal = new System.Windows.Forms.Label();
             this.lblTitrePrixTotal = new System.Windows.Forms.Label();
             this.pnlPrixTotal = new System.Windows.Forms.Panel();
+            this.txtBAdress = new System.Windows.Forms.TextBox();
             this.pnlPanier.SuspendLayout();
             this.pnlPanierVide.SuspendLayout();
             this.pnlPrixTotal.SuspendLayout();
@@ -94,7 +95,7 @@
             this.lblPrixTotal.Name = "lblPrixTotal";
             this.lblPrixTotal.Size = new System.Drawing.Size(199, 160);
             this.lblPrixTotal.TabIndex = 6;
-            this.lblPrixTotal.Text = "100€";
+            this.lblPrixTotal.Text = "0€";
             this.lblPrixTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTitrePrixTotal
@@ -122,12 +123,23 @@
             this.pnlPrixTotal.TabIndex = 7;
             this.pnlPrixTotal.Visible = false;
             // 
+            // txtBAdress
+            // 
+            this.txtBAdress.Location = new System.Drawing.Point(769, 413);
+            this.txtBAdress.Name = "txtBAdress";
+            this.txtBAdress.PlaceholderText = "Adresse";
+            this.txtBAdress.Size = new System.Drawing.Size(219, 25);
+            this.txtBAdress.TabIndex = 8;
+            this.txtBAdress.Tag = "";
+            this.txtBAdress.Visible = false;
+            // 
             // frmPanier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1000, 656);
+            this.Controls.Add(this.txtBAdress);
             this.Controls.Add(this.pnlPrixTotal);
             this.Controls.Add(this.pnlPanier);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -137,6 +149,7 @@
             this.pnlPanierVide.ResumeLayout(false);
             this.pnlPrixTotal.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -149,5 +162,6 @@
         private System.Windows.Forms.Panel pnlPrixTotal;
         private System.Windows.Forms.Panel pnlPanierVide;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBAdress;
     }
 }

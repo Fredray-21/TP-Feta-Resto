@@ -3,7 +3,6 @@ C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\TP_FETA_RESTO.runtimeconfig.json
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\TP_FETA_RESTO.runtimeconfig.dev.json
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\TP_FETA_RESTO.dll
-C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\ref\TP_FETA_RESTO.dll
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\bin\Debug\net5.0-windows\TP_FETA_RESTO.pdb
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.csproj.AssemblyReference.cache
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.Acceuil.resources
@@ -35,3 +34,4 @@ C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.CardPanier.resources
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmGestionAddFormule.resources
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmGestionAddArticle.resources
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\refint\TP_FETA_RESTO.dll

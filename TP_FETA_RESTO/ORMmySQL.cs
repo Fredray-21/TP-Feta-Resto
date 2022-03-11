@@ -141,7 +141,7 @@ namespace TP_FETA_RESTO
 
 
 
-        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix,String DescF, byte[] img)
+        public static bool AjouterFormule(List<Article> lesArticleSelected, String Nom, float Prix, String DescF, byte[] img)
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
@@ -182,7 +182,7 @@ namespace TP_FETA_RESTO
             {
                 reqI2 = reqI2 + $"INSERT INTO contient (NOFORMULE,NOARTICLE) VALUES({NOFORMULE},{a.GetIdArticle()});";
             }
-            
+
             objCmd.CommandText = reqI2;
             objCmd.ExecuteNonQuery();
             return true;
@@ -248,5 +248,62 @@ namespace TP_FETA_RESTO
             int nbMaj = objCmd.ExecuteNonQuery();
             return (nbMaj == 1);
         }
+
+      
+        public static bool AjouterReservation(double Prix, String AdresseLivr)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            float NORESA = -1;
+            Prix = (float)Prix;
+
+            String reqI = $"INSERT INTO reservation (idUser,DATERESA,MONTANT,ADRLIVR) VALUES('{ORMmySQL.CurrentUser.GetIdUser()}','{DateTime.Now.ToString("yyy/MM/dd HH:mm:ss")}','{Prix}','{AdresseLivr}')";
+            objCmd.CommandText = reqI;
+
+
+            int nbMaj = objCmd.ExecuteNonQuery();
+            if (nbMaj == 1)
+            {
+                String reqNumId = "SELECT LAST_INSERT_ID()";
+                objCmd.CommandText = reqNumId;
+                object result = objCmd.ExecuteScalar();
+                bool convertOK = float.TryParse(result.ToString(), out float id);
+
+                if (convertOK)
+                {
+                    NORESA = id;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            //fin ajoute table reservation
+
+
+            objCmd = conn.CreateCommand();
+            String reqI2 = $"";
+            foreach (Formule f in ORMmySQL.Panier)
+            {
+                reqI2 = reqI2 + $"INSERT INTO comporte (NORESA,NOFORMULE) VALUES({NORESA},{f.GetIdFormule()});";
+            }
+
+            objCmd.CommandText = reqI2;
+
+           int  nbMajj = objCmd.ExecuteNonQuery();
+            if (nbMajj !=0 )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

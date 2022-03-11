@@ -16,9 +16,10 @@ namespace TP_FETA_RESTO
         public frmPanier()
         {
             InitializeComponent();
-            if(ORMmySQL.Panier.Count > 0)
+            if (ORMmySQL.Panier.Count > 0)
             {
                 pnlPrixTotal.Visible = true;
+                txtBAdress.Visible = true;
                 this.pnlPanier.Controls.Clear();
             }
 
@@ -27,7 +28,7 @@ namespace TP_FETA_RESTO
             {
                 Prix_Total += f.GetPrixFormule();
             }
-            lblPrixTotal.Text = Prix_Total.ToString()+"€";
+            lblPrixTotal.Text = Prix_Total.ToString() + "€";
             int x = 10;
             int y = 10;
             List<Formule> PanierDistinct = new List<Formule>(); // ici panier Distinct
@@ -43,7 +44,7 @@ namespace TP_FETA_RESTO
             {
                 CardPanier CardPanier = new CardPanier() { Location = new Point(x, y), TopLevel = false, TopMost = true };
                 CardPanier.FormBorderStyle = FormBorderStyle.None;
-                
+
                 //Début multiplicateur
                 int multiplicateur = 0;
                 foreach (Formule formule in ORMmySQL.Panier)
@@ -53,10 +54,10 @@ namespace TP_FETA_RESTO
                         multiplicateur++;
                     }
                 }
-                CardPanier.lblMultiplicateur.Text = "x"+multiplicateur.ToString();
+                CardPanier.lblMultiplicateur.Text = "x" + multiplicateur.ToString();
                 //Fin multiplicateur
 
-                CardPanier.lblNOFORMULE.Text = "N°"+f.GetIdFormule().ToString();
+                CardPanier.lblNOFORMULE.Text = "N°" + f.GetIdFormule().ToString();
                 CardPanier.lblTitle.Text = f.GetNomFormule();
                 CardPanier.lblPrixUnitaire.Text = f.GetPrixFormule().ToString() + " €/u";
 
@@ -113,7 +114,51 @@ namespace TP_FETA_RESTO
 
         private void btnReservePanier_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txtBAdress.Text))
+            {
+                MessageBox.Show("Veuiller rentré une Adresse Valide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show($"Etes vous sur de vouloir réservé ce Panier", "Voulez-vous vraiment réservé le Panier", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    double prixTotal = 0;
+                    foreach (Formule f in ORMmySQL.Panier)
+                    {
+                        prixTotal += f.GetPrixFormule();
 
+                    }
+                    if(ORMmySQL.AjouterReservation(prixTotal, txtBAdress.Text))
+                    {
+
+                        Compte c = ORMmySQL.CurrentUser;
+                        Acceuil MajAcceuil = new Acceuil();
+                        MajAcceuil.lblUserName.Text = c.GetNom() + " " + c.GetPrenom();
+                        MajAcceuil.lblType.Text = "Type : " + c.GetTypeCompte();
+                        MajAcceuil.lblType.Visible = true;
+                        MajAcceuil.btnConnexion.Text = "Mon Compte";
+
+                        if (c.GetTypeCompte() == "ADM" || c.GetTypeCompte() == "GES")
+                        {
+                            MajAcceuil.pnlAdmin.Visible = true;
+                        }
+                        if (c != null)
+                        {
+                            MajAcceuil.btnPanier.Visible = true;
+                            MajAcceuil.btnMesReservation.Visible = true;
+                        }
+                        MajAcceuil.Show();
+                       ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); // cache le formulaire d'avant
+
+                        ORMmySQL.Panier.Clear();
+
+                        MessageBox.Show("La Reservation à bien été enregisté");
+
+                    }
+
+                }
+            }
         }
     }
 }

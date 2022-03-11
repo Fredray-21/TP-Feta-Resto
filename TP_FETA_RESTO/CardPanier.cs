@@ -46,10 +46,14 @@ namespace TP_FETA_RESTO
                 MajAcceuil.btnPanier.Visible = true;
                 MajAcceuil.btnMesReservation.Visible = true;
             }
-            MessageBox.Show("Une formule N°" + IdFormule.ToString() + " à bien été retiré du panier");
             MajAcceuil.Show();
             ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); // cache le formulaire d'avant
+
+            MessageBox.Show("Une formule N°" + IdFormule.ToString() + " à bien été retiré du panier");
 
         }
     }
 }
+
+// MAJ à jour  -->  seulement du form et pas du full acceuil
+
