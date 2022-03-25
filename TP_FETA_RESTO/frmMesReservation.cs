@@ -15,6 +15,37 @@ namespace TP_FETA_RESTO
         public frmMesReservation()
         {
             InitializeComponent();
+            int x = 10;
+            int y = 10;
+            int Xlbl = 10;
+            int Ylbl = 10;
+            List<Reservation> listRESA = ORMmySQL.GetAllReservationParUser(ORMmySQL.CurrentUser);
+
+            foreach (Reservation r in listRESA)
+            {
+                CardReservation CardReservation = new CardReservation() { Location = new Point(x, y), TopLevel = false, TopMost = true };
+                CardReservation.FormBorderStyle = FormBorderStyle.None;
+                CardReservation.lblDateResa.Text = r.GetDateResa().ToString("dd/MM/yyyy");
+                CardReservation.lblMontantT.Text = r.GetMontant().ToString() + " €";
+                CardReservation.lblAdresse.Text = r.GetAdressLivraison().ToString();
+
+                foreach (Formule f in ORMmySQL.GetAllFormuleParResa(r))
+                {
+                    FontFamily family = new FontFamily("Microsoft Sans Serif");
+                    Font font = new Font(family, 12, FontStyle.Bold);
+
+                    Label lbl = new Label() { Location = new Point(Xlbl, Ylbl), Font = font, ForeColor = Color.White, AutoSize = true};
+                    lbl.Text = $"- {f.GetNomFormule()}";
+
+                    CardReservation.pnlListFormule.Controls.Add(lbl);
+                    lbl.Show();
+                    Ylbl = Ylbl + 30;
+                }
+                Ylbl = 10;
+                this.pnlReservation.Controls.Add(CardReservation);
+                CardReservation.Show();
+                y = y + 230;
+            }
         }
     }
 }

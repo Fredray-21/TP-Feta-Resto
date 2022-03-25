@@ -23,6 +23,15 @@ namespace TP_FETA_RESTO
             this.adressLivraison = AdressLivraison;
         }
 
+        public Reservation(int NoResa, int IdUser, DateTime DateResa, double Montant, String AdressLivraison)
+        {
+            this.noResa = NoResa;
+            this.idUser = IdUser;
+            this.dateResa = DateResa;
+            this.montant = Montant;
+            this.adressLivraison = AdressLivraison;
+        }
+
         public int GetNoResa()
         {
             return this.noResa;
@@ -42,6 +51,10 @@ namespace TP_FETA_RESTO
         public String GetAdressLivraison()
         {
             return this.adressLivraison;
+        }
+        public override string ToString()
+        {
+            return $"{this.noResa} / {this.idUser} / {this.dateResa} / {this.montant} / {this.adressLivraison}";
         }
 
     }

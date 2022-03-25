@@ -28,37 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.pnlReservation = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // label1
+            // pnlReservation
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(298, 153);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.pnlReservation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlReservation.Location = new System.Drawing.Point(0, 0);
+            this.pnlReservation.Name = "pnlReservation";
+            this.pnlReservation.Size = new System.Drawing.Size(1000, 656);
+            this.pnlReservation.TabIndex = 0;
             // 
             // frmMesReservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(1000, 656);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pnlReservation);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMesReservation";
             this.Text = "frmDeuxieme";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnlReservation;
     }
 }

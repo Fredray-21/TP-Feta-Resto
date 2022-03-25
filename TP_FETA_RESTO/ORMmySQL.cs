@@ -249,7 +249,7 @@ namespace TP_FETA_RESTO
             return (nbMaj == 1);
         }
 
-      
+
         public static bool AjouterReservation(double Prix, String AdresseLivr)
         {
             MySqlCommand objCmd;
@@ -294,8 +294,8 @@ namespace TP_FETA_RESTO
 
             objCmd.CommandText = reqI2;
 
-           int  nbMajj = objCmd.ExecuteNonQuery();
-            if (nbMajj !=0 )
+            int nbMajj = objCmd.ExecuteNonQuery();
+            if (nbMajj != 0)
             {
                 return true;
             }
@@ -303,6 +303,49 @@ namespace TP_FETA_RESTO
             {
                 return false;
             }
+        }
+
+
+        public static List<Reservation> GetAllReservationParUser(Compte CompteCurrent)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            List<Reservation> LesReservationDuCompte = new List<Reservation>();
+
+            //String reqCount = $"SELECT reservation.*, formules.NOMFORMULE FROM reservation JOIN comporte ON reservation.NORESA = comporte.NORESA JOIN  formules ON comporte.NOFORMULE = formules.NOFORMULE WHERE reservation.idUser = {CompteCurrent.GetIdUser()}";
+
+            String reqCount = $"SELECT reservation.* from reservation WHERE reservation.idUser = {CompteCurrent.GetIdUser()}";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Reservation r = new Reservation((int)rdr["NORESA"], (int)rdr["idUser"], (DateTime)rdr["DATERESA"], (float)rdr["MONTANT"], (String)rdr["ADRLIVR"]);
+
+                LesReservationDuCompte.Add(r);
+            }
+            rdr.Close();
+            return LesReservationDuCompte;
+        }
+
+        public static List<Formule> GetAllFormuleParResa(Reservation r)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            List<Formule> LesFormuleDeLaRESA = new List<Formule>();
+
+            String reqCount = $"SELECT * FROM reservation JOIN comporte ON reservation.NORESA = comporte.NORESA JOIN  formules ON comporte.NOFORMULE = formules.NOFORMULE WHERE reservation.NORESA = {r.GetNoResa()}";
+
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Formule f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"], (String)rdr["DESCFORMULE"]);
+                LesFormuleDeLaRESA.Add(f);
+            }
+            rdr.Close();
+            return LesFormuleDeLaRESA;
         }
 
     }

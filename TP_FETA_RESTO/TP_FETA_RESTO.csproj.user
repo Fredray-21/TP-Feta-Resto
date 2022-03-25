@@ -11,6 +11,9 @@
     <Compile Update="CardPanier.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CardReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmConnexion.cs">
       <SubType>Form</SubType>
     </Compile>
