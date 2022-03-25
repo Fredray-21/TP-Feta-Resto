@@ -11,7 +11,7 @@ namespace TP_FETA_RESTO
 {
     public static class ORMmySQL
     {
-        public static Compte CurrentUser = null;
+        public static Compte CurrentUser = null!;
         public static int _counterForm = 0; // permet de renomé et supprimer les formulaire voulu
         public static List<Formule> Panier = new List<Formule>();
         // Note
@@ -20,7 +20,7 @@ namespace TP_FETA_RESTO
         // ExecuteScalar() -> objet  Si on veux resevoir un object
 
         private static String cs = @"server=localhost;userid=fetaresto;password=;database=feta_resto";
-        private static MySqlConnection conn = null;
+        private static MySqlConnection conn = null!;
 
         public static bool ConnexionDB()
         {
@@ -38,7 +38,7 @@ namespace TP_FETA_RESTO
             String reqCount = $"SELECT * FROM compte WHERE ADRMAILCPTE = '{AdrMail}' AND MDP = '{MDP}'";
             objCmd.CommandText = reqCount;
             rdr = objCmd.ExecuteReader();
-            Compte p = null;
+            Compte p = null!;
             if (rdr.Read())
             {
                 p = new Compte((int)rdr["idUser"], (String)rdr["MDP"], (String)rdr["NOMCPTE"], (String)rdr["PRENOMCPTE"], (DateTime)rdr["DATEINSCRIP"], (String)rdr["ADRMAILCPTE"], (String)rdr["NOTELCPTE"], (String)rdr["TYPECOMPTE"]);
@@ -99,7 +99,7 @@ namespace TP_FETA_RESTO
             String reqCount = $"SELECT * FROM formules WHERE NOFORMULE = {NOFORMULE}";
             objCmd.CommandText = reqCount;
             rdr = objCmd.ExecuteReader();
-            Formule f = null;
+            Formule f = null!;
             if (rdr.Read())
             {
                 f = new Formule((int)rdr["NOFORMULE"], (String)rdr["NOMFORMULE"], (float)rdr["PRIXFORMULE"], (String)rdr["DESCFORMULE"]);
@@ -213,7 +213,7 @@ namespace TP_FETA_RESTO
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
             MySqlDataReader rdr;
-            byte[] img = null;
+            byte[] img = null!;
 
             String reqCount = $"SELECT PHOTOFORMULE from formules WHERE NOFORMULE = {IdFormule}";
             objCmd.CommandText = reqCount;
@@ -230,7 +230,6 @@ namespace TP_FETA_RESTO
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
-            MySqlDataReader rdr;
 
             String reqCount = $"DELETE FROM formules WHERE NOFORMULE = {IdFormule}";
             objCmd.CommandText = reqCount;
@@ -241,7 +240,6 @@ namespace TP_FETA_RESTO
         {
             MySqlCommand objCmd;
             objCmd = conn.CreateCommand();
-            MySqlDataReader rdr;
 
             String reqCount = $"DELETE FROM articles WHERE NOARTICLE = {IdArticle}";
             objCmd.CommandText = reqCount;

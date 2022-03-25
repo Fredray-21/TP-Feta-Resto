@@ -18,7 +18,7 @@ namespace TP_FETA_RESTO
             String[] TypeArticle = new String[] { "Entrée", "Plat", "Dessert", "Supplément", "Boisson", "Alcool" };
             listBTypeArticle.Items.AddRange(TypeArticle.ToArray());
 
-            listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
+            ClearTxt();
         }
 
         public void ClearTxt()
@@ -26,6 +26,7 @@ namespace TP_FETA_RESTO
             listBTypeArticle.SelectedItem = null;
             txtBNomArticle.Text = "";
             listBLesArticles.Items.Clear();
+            listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
         }
 
         private void btnDeconnexion_Click(object sender, EventArgs e)
@@ -63,7 +64,6 @@ namespace TP_FETA_RESTO
                 {
                     MessageBox.Show("L'Article à bien été supprimer", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearTxt();
-                    listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
                 }
 
             }

@@ -108,7 +108,7 @@
             this.pnlListFormule.AutoScroll = true;
             this.pnlListFormule.Location = new System.Drawing.Point(287, 53);
             this.pnlListFormule.Name = "pnlListFormule";
-            this.pnlListFormule.Size = new System.Drawing.Size(233, 155);
+            this.pnlListFormule.Size = new System.Drawing.Size(251, 155);
             this.pnlListFormule.TabIndex = 4;
             // 
             // label4
@@ -119,7 +119,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(228, 41);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Liste des Formule de la réservation:";
+            this.label4.Text = "Liste des Formules de la réservation:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CardReservation

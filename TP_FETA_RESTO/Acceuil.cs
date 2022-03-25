@@ -31,8 +31,7 @@ namespace TP_FETA_RESTO
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            ORMmySQL.ConnexionDB();
-
+            ORMmySQL.ConnexionDB()
         }
 
         private void Acceuil_Load(object sender, EventArgs e)
@@ -89,7 +88,6 @@ namespace TP_FETA_RESTO
             frmMesReservation.FormBorderStyle = FormBorderStyle.None;
             this.pnlFormLoader.Controls.Add(frmMesReservation);
             frmMesReservation.Show();
-
         }
 
 

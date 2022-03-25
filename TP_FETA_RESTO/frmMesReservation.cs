@@ -35,7 +35,7 @@ namespace TP_FETA_RESTO
                     Font font = new Font(family, 12, FontStyle.Bold);
 
                     Label lbl = new Label() { Location = new Point(Xlbl, Ylbl), Font = font, ForeColor = Color.White, AutoSize = true};
-                    lbl.Text = $"- {f.GetNomFormule()}";
+                    lbl.Text = $"- {f.GetNomFormule()} ({f.GetPrixFormule()}€)";
 
                     CardReservation.pnlListFormule.Controls.Add(lbl);
                     lbl.Show();
@@ -44,8 +44,14 @@ namespace TP_FETA_RESTO
                 Ylbl = 10;
                 this.pnlReservation.Controls.Add(CardReservation);
                 CardReservation.Show();
-                y = y + 230;
+                y = y + 240;
             }
+
+            CardReservation CardFin = new CardReservation() { Enabled = false, Visible = false, Location = new Point(x, y), BackColor = Color.FromArgb(50, 50, 50), Size = new Size(10, 5), TopLevel = false, TopMost = true };
+            CardFin.FormBorderStyle = FormBorderStyle.None;
+            this.pnlReservation.Controls.Add(CardFin);
+            CardFin.Show();
+
         }
     }
 }

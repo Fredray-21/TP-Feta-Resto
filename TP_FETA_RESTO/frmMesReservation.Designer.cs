@@ -33,6 +33,7 @@
             // 
             // pnlReservation
             // 
+            this.pnlReservation.AutoScroll = true;
             this.pnlReservation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlReservation.Location = new System.Drawing.Point(0, 0);
             this.pnlReservation.Name = "pnlReservation";
