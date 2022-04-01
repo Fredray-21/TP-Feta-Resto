@@ -36,3 +36,4 @@ C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmGestionAddArticle.resources
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\refint\TP_FETA_RESTO.dll
 C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.CardReservation.resources
+C:\Users\pt_fr\OneDrive\Documents\1 BTS - 2EME ANNE\Projet\TP_FETA_RESTO\TP_FETA_RESTO\obj\Debug\net5.0-windows\TP_FETA_RESTO.frmGestionViewAllResa.resources

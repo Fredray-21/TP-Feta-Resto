@@ -200,5 +200,21 @@ namespace TP_FETA_RESTO
             this.pnlFormLoader.Controls.Add(frmGestionAddArticle);
             frmGestionAddArticle.Show();
         }
+
+        private void btnGestionViewResa_Click(object sender, EventArgs e)
+        {
+            pnlNavGestion.Height = btnGestionViewResa.Height;
+            pnlNavGestion.Top = btnGestionViewResa.Top;
+            pnlNavGestion.Left = btnGestionViewResa.Left;
+            pnlNavGestion.Visible = true;
+            pnlNav.Visible = false;
+
+            lblTitle.Text = "Voir toute les reservations";
+            this.pnlFormLoader.Controls.Clear();
+            frmGestionViewAllResa frmGestionViewAllResa = new frmGestionViewAllResa() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            frmGestionViewAllResa.FormBorderStyle = FormBorderStyle.None;
+            this.pnlFormLoader.Controls.Add(frmGestionViewAllResa);
+            frmGestionViewAllResa.Show();
+        }
     }
 }

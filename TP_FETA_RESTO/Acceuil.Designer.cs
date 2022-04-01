@@ -175,7 +175,7 @@
             this.btnGestionViewResa.Text = "Voir les Réservations";
             this.btnGestionViewResa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnGestionViewResa.UseVisualStyleBackColor = true;
-            this.btnGestionViewResa.Click += new System.EventHandler(this.btnMesReservation_Click);
+            this.btnGestionViewResa.Click += new System.EventHandler(this.btnGestionViewResa_Click);
             // 
             // panel5
             // 

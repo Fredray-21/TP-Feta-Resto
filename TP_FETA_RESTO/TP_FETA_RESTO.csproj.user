@@ -29,6 +29,9 @@
     <Compile Update="frmGestionAddFormule.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frmGestionViewAllResa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmMesReservation.cs">
       <SubType>Form</SubType>
     </Compile>

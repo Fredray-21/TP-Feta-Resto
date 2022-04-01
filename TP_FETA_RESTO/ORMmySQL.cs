@@ -42,7 +42,6 @@ namespace TP_FETA_RESTO
             if (rdr.Read())
             {
                 p = new Compte((int)rdr["idUser"], (String)rdr["MDP"], (String)rdr["NOMCPTE"], (String)rdr["PRENOMCPTE"], (DateTime)rdr["DATEINSCRIP"], (String)rdr["ADRMAILCPTE"], (String)rdr["NOTELCPTE"], (String)rdr["TYPECOMPTE"]);
-
             }
             rdr.Close();
             return p;
@@ -311,9 +310,7 @@ namespace TP_FETA_RESTO
             MySqlDataReader rdr;
             List<Reservation> LesReservationDuCompte = new List<Reservation>();
 
-            //String reqCount = $"SELECT reservation.*, formules.NOMFORMULE FROM reservation JOIN comporte ON reservation.NORESA = comporte.NORESA JOIN  formules ON comporte.NOFORMULE = formules.NOFORMULE WHERE reservation.idUser = {CompteCurrent.GetIdUser()}";
-
-            String reqCount = $"SELECT reservation.* from reservation WHERE reservation.idUser = {CompteCurrent.GetIdUser()}";
+            String reqCount = $"SELECT reservation.* from reservation WHERE reservation.idUser = {CompteCurrent.GetIdUser()} ORDER BY reservation.DATERESA desc";
             objCmd.CommandText = reqCount;
             rdr = objCmd.ExecuteReader();
             while (rdr.Read())
@@ -325,6 +322,27 @@ namespace TP_FETA_RESTO
             rdr.Close();
             return LesReservationDuCompte;
         }
+
+        public static List<Reservation> GetAllReservation()
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            MySqlDataReader rdr;
+            List<Reservation> LesReservation = new List<Reservation>();
+
+            String reqCount = $"SELECT reservation.* from reservation ORDER BY reservation.DATERESA desc";
+            objCmd.CommandText = reqCount;
+            rdr = objCmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                Reservation r = new Reservation((int)rdr["NORESA"], (int)rdr["idUser"], (DateTime)rdr["DATERESA"], (float)rdr["MONTANT"], (String)rdr["ADRLIVR"]);
+
+                LesReservation.Add(r);
+            }
+            rdr.Close();
+            return LesReservation;
+        }
+
 
         public static List<Formule> GetAllFormuleParResa(Reservation r)
         {
@@ -345,6 +363,5 @@ namespace TP_FETA_RESTO
             rdr.Close();
             return LesFormuleDeLaRESA;
         }
-
     }
 }
