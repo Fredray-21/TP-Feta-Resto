@@ -363,5 +363,15 @@ namespace TP_FETA_RESTO
             rdr.Close();
             return LesFormuleDeLaRESA;
         }
+
+        public static bool UpdateArticle(int idArticle, String Nom, String TypeArticle)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+            String reqU = $"UPDATE articles SET NOMARTICLE = '{Nom}',TYPEARTICLE = '{TypeArticle}' WHERE NOARTICLE = {idArticle}";
+            objCmd.CommandText = reqU;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            return (nbMaj == 1);
+        }
     }
 }

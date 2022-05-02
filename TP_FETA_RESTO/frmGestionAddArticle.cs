@@ -29,7 +29,7 @@ namespace TP_FETA_RESTO
             listBLesArticles.Items.AddRange(ORMmySQL.GetAllArticles().ToArray());
         }
 
-        private void btnDeconnexion_Click(object sender, EventArgs e)
+        private void btnAddArticle_Click(object sender, EventArgs e)
         {
             String type = (String)listBTypeArticle.SelectedItem;
 
@@ -67,6 +67,66 @@ namespace TP_FETA_RESTO
                 }
 
             }
+        }
+
+        private void btnEditArticle_Click(object sender, EventArgs e)
+        {
+            if (listBLesArticles.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez choisir un article à modifier", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Article a = (Article)listBLesArticles.SelectedItem;
+                lblTitleAddEdit.Text = "Modifier l'Article";
+                txtBNomArticle.Text = a.GetNomArticle();
+
+                btnAnnulerEdit.Visible = true;
+                btnAddArticle.Visible = false;
+                btnValidEdit.Location = new Point(192, 263);
+                btnValidEdit.Visible = true;
+                for (int i = 0; i < listBTypeArticle.Items.Count; i++)
+                {
+                    if (a.GetTypeArticle().Equals(listBTypeArticle.Items[i]))
+                    {
+                        listBTypeArticle.SelectedIndex = i;
+                        break;
+                    }
+
+                }
+            }
+        }
+
+        private void btnAnnulerEdit_Click(object sender, EventArgs e)
+        {
+            lblTitleAddEdit.Text = "Ajouter un Article";
+            txtBNomArticle.Clear();
+            listBTypeArticle.ClearSelected();
+
+            btnAnnulerEdit.Visible = false;
+            btnValidEdit.Visible = false;
+            btnValidEdit.Location = new Point(192, 297);
+            btnAddArticle.Visible = true;
+        }
+
+        private void btnValidEdit_Click(object sender, EventArgs e)
+        {
+            Article a = (Article)listBLesArticles.SelectedItem;
+            String newType = (String)listBTypeArticle.SelectedItem;
+            String newName = txtBNomArticle.Text;
+
+            bool edit = ORMmySQL.UpdateArticle(a.GetIdArticle(), newName, newType);
+            if (edit)
+            {
+                MessageBox.Show("L'article a bien été modifier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearTxt();
+                btnAnnulerEdit_Click("", EventArgs.Empty);
+            }
+        }
+
+        private void listBLesArticles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnAnnulerEdit_Click("",EventArgs.Empty);
         }
     }
 }
