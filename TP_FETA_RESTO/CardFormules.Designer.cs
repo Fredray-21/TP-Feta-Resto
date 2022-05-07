@@ -177,7 +177,7 @@
             this.btnGestionEditFormule.Text = "Modifier";
             this.btnGestionEditFormule.UseVisualStyleBackColor = true;
             this.btnGestionEditFormule.Visible = false;
-            this.btnGestionEditFormule.Click += new System.EventHandler(this.btnReserveCard_Click);
+            this.btnGestionEditFormule.Click += new System.EventHandler(this.btnGestionEditFormule_Click);
             // 
             // btnGestionDelFormule
             // 

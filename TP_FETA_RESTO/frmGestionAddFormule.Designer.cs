@@ -34,7 +34,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtBNomArticle = new System.Windows.Forms.TextBox();
+            this.txtBNomFormule = new System.Windows.Forms.TextBox();
             this.txtPrixFormule = new System.Windows.Forms.TextBox();
             this.btnAddFormule = new System.Windows.Forms.Button();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
@@ -115,14 +115,14 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Dessert";
             // 
-            // txtBNomArticle
+            // txtBNomFormule
             // 
-            this.txtBNomArticle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtBNomArticle.Location = new System.Drawing.Point(224, 58);
-            this.txtBNomArticle.Name = "txtBNomArticle";
-            this.txtBNomArticle.PlaceholderText = "Nom de la Formule";
-            this.txtBNomArticle.Size = new System.Drawing.Size(217, 30);
-            this.txtBNomArticle.TabIndex = 2;
+            this.txtBNomFormule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25743F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtBNomFormule.Location = new System.Drawing.Point(224, 58);
+            this.txtBNomFormule.Name = "txtBNomFormule";
+            this.txtBNomFormule.PlaceholderText = "Nom de la Formule";
+            this.txtBNomFormule.Size = new System.Drawing.Size(217, 30);
+            this.txtBNomFormule.TabIndex = 2;
             // 
             // txtPrixFormule
             // 
@@ -264,7 +264,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrixFormule);
             this.Controls.Add(this.txtBDescFormule);
-            this.Controls.Add(this.txtBNomArticle);
+            this.Controls.Add(this.txtBNomFormule);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionAddFormule";
@@ -282,7 +282,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtBNomArticle;
+        private System.Windows.Forms.TextBox txtBNomFormule;
         private System.Windows.Forms.TextBox txtPrixFormule;
         private System.Windows.Forms.Button btnAddFormule;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;

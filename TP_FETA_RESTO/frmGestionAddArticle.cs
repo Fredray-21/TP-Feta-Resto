@@ -17,7 +17,6 @@ namespace TP_FETA_RESTO
             InitializeComponent();
             String[] TypeArticle = new String[] { "Entrée", "Plat", "Dessert", "Supplément", "Boisson", "Alcool" };
             listBTypeArticle.Items.AddRange(TypeArticle.ToArray());
-
             ClearTxt();
         }
 

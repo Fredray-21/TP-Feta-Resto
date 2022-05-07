@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace TP_FETA_RESTO
 {
-    public partial class frmGestionAddFormule : Form
+    public partial class frmEditFormules : Form
     {
-
-        public frmGestionAddFormule()
+        private int idFormule;
+        public frmEditFormules(int IdFormule)
         {
             InitializeComponent();
+            this.idFormule = IdFormule;
             List<Article> LesAticles = ORMmySQL.GetAllArticles();
             comBoxentree.Items.Add(String.Empty);
             comBoxPlat.Items.Add(String.Empty);
@@ -58,21 +59,74 @@ namespace TP_FETA_RESTO
                     }
                 }
             }
+
+            Formule f = ORMmySQL.GetFormule(IdFormule);
+            if (f == null) this.Close();
+            else
+            {
+                txtBNomFormule.Text = f.GetNomFormule();
+                txtPrixFormule.Text = f.GetPrixFormule().ToString();
+                txtBDescFormule.Text = f.GetDescFormule();
+
+                byte[] img = ORMmySQL.GetPictureFormule(f.GetIdFormule());
+                var ms = new MemoryStream(img);
+                Image image = Image.FromStream(ms);
+                pictureBoxPhoto.Image = image;
+
+                List<Article> articlesFormule = ORMmySQL.GetAllArticleParIdFormule(f.GetIdFormule());
+                SelectInComBox(articlesFormule);
+
+            }
         }
-        public void ClearAll()
+
+
+        private void SelectInComBox(List<Article> lesARTS)
         {
-            comBoxentree.SelectedIndex = -1;
-            comBoxPlat.SelectedIndex = -1;
-            comBoxDessert.SelectedIndex = -1;
-            comBoxSupp.SelectedIndex = -1;
-            comBoxBoisson.SelectedIndex = -1;
-            comBoxAlcool.SelectedIndex = -1;
-            txtBNomFormule.Clear();
-            txtPrixFormule.Clear();
-            txtBDescFormule.Clear();
-            pictureBoxPhoto.Image = null;
+            ComboBox box = comBoxentree;
+            foreach (Article article in lesARTS)
+            {
+                switch (article.GetTypeArticle())
+                {
+                    case "Entrée": box = comBoxentree; break;
+                    case "Plat": box = comBoxPlat; break;
+                    case "Dessert": box = comBoxDessert; break;
+                    case "Supplément": box = comBoxSupp; break;
+                    case "Boisson": box = comBoxBoisson; break;
+                    case "Alcool": box = comBoxAlcool; break;
+                }
+
+                for (int i = 0; i < box.Items.Count; i++)
+                {
+                    if (box.Items[i].ToString() == article.GetNomArticle()) box.SelectedIndex = i;
+                }
+            }
         }
-        private void btnAddFormule_Click(object sender, EventArgs e)
+
+        private void btnQuit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnChooseImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dlg = new OpenFileDialog();
+            dlg.Filter = "Image Files(*.jpg; *.png;)|*.jpg; *.png;|JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png";
+
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                String PicLoc = dlg.FileName.ToString();
+                if (PicLoc.Substring(PicLoc.Length - 4) != ".png" && PicLoc.Substring(PicLoc.Length - 4) != ".jpg")
+                {
+                    MessageBox.Show("Le Format est incorrect (.png ou .jpg)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    pictureBoxPhoto.Image = Image.FromFile(PicLoc);
+                }
+            }
+        }
+
+        private void btnEDITFormule_Click(object sender, EventArgs e)
         {
             Article entree = null;
             Article plat = null;
@@ -81,12 +135,12 @@ namespace TP_FETA_RESTO
             Article boisson = null;
             Article alcool = null;
 
-            if(comBoxentree.SelectedItem is Article)
+            if (comBoxentree.SelectedItem is Article)
             {
                 entree = (Article)comBoxentree.SelectedItem;
 
             }
-            if(comBoxPlat.SelectedItem is Article)
+            if (comBoxPlat.SelectedItem is Article)
             {
                 plat = (Article)comBoxPlat.SelectedItem;
             }
@@ -159,14 +213,15 @@ namespace TP_FETA_RESTO
                 pictureBoxPhoto.Image.Save(ms, pictureBoxPhoto.Image.RawFormat);
                 byte[] img = ms.ToArray();
 
-                if (ORMmySQL.AjouterFormule(LesArticleSelected, txtBNomFormule.Text, PrixFormule, txtBDescFormule.Text, img))
-                {
-                    MessageBox.Show("La formule à bien été ajouter", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearAll();
+
+                if (ORMmySQL.UpdateFormule(LesArticleSelected, txtBNomFormule.Text, PrixFormule, txtBDescFormule.Text, img, this.idFormule))
+                { 
+                    MessageBox.Show("La formule à bien été Modifier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("La formule n'à pas été ajouter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("La formule n'à pas été Modifier", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -175,23 +230,6 @@ namespace TP_FETA_RESTO
             }
         }
 
-        private void btnChooseImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "Image Files(*.jpg; *.png;)|*.jpg; *.png;|JPG Files(*.jpg)|*.jpg|PNG Files(*.png)|*.png";
-
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                String PicLoc = dlg.FileName.ToString();
-                if (PicLoc.Substring(PicLoc.Length - 4) != ".png" && PicLoc.Substring(PicLoc.Length - 4) != ".jpg")
-                {
-                    MessageBox.Show("Le Format est incorrect (.png ou .jpg)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    pictureBoxPhoto.Image = Image.FromFile(PicLoc);
-                }
-            }
-        }
     }
+
 }

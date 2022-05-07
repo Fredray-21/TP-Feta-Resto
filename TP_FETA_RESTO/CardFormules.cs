@@ -69,7 +69,7 @@ namespace TP_FETA_RESTO
                         }
 
                         MajAcceuil.Show();
-                        ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide(); 
+                        ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Hide();
 
                         MessageBox.Show($"La Formule N°{idFormule} a bien été Supprimé", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -80,6 +80,14 @@ namespace TP_FETA_RESTO
                     }
                 }
             }
+        }
+
+        private void btnGestionEditFormule_Click(object sender, EventArgs e)
+        {
+            string[] TabTextBTN = btnReserveCard.Text.Split('°');
+            int idFormule = Int32.Parse(TabTextBTN[1]);
+            frmEditFormules frmEditFormules = new frmEditFormules(idFormule);
+            frmEditFormules.Show();
         }
     }
 }

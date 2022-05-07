@@ -373,5 +373,39 @@ namespace TP_FETA_RESTO
             int nbMaj = objCmd.ExecuteNonQuery();
             return (nbMaj == 1);
         }
+
+        public static bool UpdateFormule(List<Article> lesArticleSelected, String Nom, float Prix, String DescF, byte[] img, int NOFORMULE)
+        {
+            MySqlCommand objCmd;
+            objCmd = conn.CreateCommand();
+
+            String reqI = $"UPDATE formules SET NOMFORMULE = '{Nom}',PRIXFORMULE = '{Prix}',DESCFORMULE = '{DescF}',PHOTOFORMULE = @img WHERE NOFORMULE = {NOFORMULE}";
+            objCmd.CommandText = reqI;
+            objCmd.Parameters.Add("@img", MySqlDbType.MediumBlob);
+            objCmd.Parameters["@img"].Value = img;
+            int nbMaj = objCmd.ExecuteNonQuery();
+            if (nbMaj > 0)
+            {
+                objCmd = conn.CreateCommand();
+                String reqCount = $"DELETE FROM contient WHERE NOFORMULE = {NOFORMULE}";
+                objCmd.CommandText = reqCount;
+                nbMaj = objCmd.ExecuteNonQuery();
+                if (nbMaj > 0)
+                {
+                    objCmd = conn.CreateCommand();
+                    String reqI2 = $"";
+                    foreach (Article a in lesArticleSelected)
+                    {
+                        reqI2 = reqI2 + $"INSERT INTO contient (NOFORMULE,NOARTICLE) VALUES({NOFORMULE},{a.GetIdArticle()});";
+                    }
+                    objCmd.CommandText = reqI2;
+                    objCmd.ExecuteNonQuery();
+                    int nbMajj = objCmd.ExecuteNonQuery();
+                    return (nbMajj > 0);
+                }
+                else return false;
+            }
+            else return false;
+        }
     }
 }
