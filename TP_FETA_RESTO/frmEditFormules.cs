@@ -218,6 +218,24 @@ namespace TP_FETA_RESTO
                 { 
                     MessageBox.Show("La formule à bien été Modifier", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+
+                    Acceuil MajAcceuil = new Acceuil();
+                    MajAcceuil.lblUserName.Text = ORMmySQL.CurrentUser.GetNom() + " " + ORMmySQL.CurrentUser.GetPrenom();
+                    MajAcceuil.lblType.Text = "Type : " + ORMmySQL.CurrentUser.GetTypeCompte();
+                    MajAcceuil.lblType.Visible = true;
+                    MajAcceuil.btnConnexion.Text = "Mon Compte";
+                    if (ORMmySQL.CurrentUser.GetTypeCompte() == "ADM" || ORMmySQL.CurrentUser.GetTypeCompte() == "GES")
+                    {
+                        MajAcceuil.pnlAdmin.Visible = true;
+                    }
+                    if (ORMmySQL.CurrentUser != null)
+                    {
+                        MajAcceuil.btnPanier.Visible = true;
+                        MajAcceuil.btnMesReservation.Visible = true;
+                    }
+                    MajAcceuil.Show();
+                    ((Acceuil)Application.OpenForms["frm" + (ORMmySQL._counterForm - 2).ToString()]).Close(); // Supprime le formulaire d'avant
+
                 }
                 else
                 {
